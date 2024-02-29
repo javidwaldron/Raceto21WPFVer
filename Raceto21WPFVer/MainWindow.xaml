@@ -13,7 +13,9 @@
             <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
         <Menu>
-            <MenuItem Header="File" FontSize="16"/>
+            <MenuItem Header="File" FontSize="16">
+                <MenuItem Header="Exit" FontSize="16" Click="MenuItem_Click"/>
+            </MenuItem>
             <MenuItem Header="How To Play" FontSize="16"/>
             <MenuItem Header="About" FontSize="16"/>
 

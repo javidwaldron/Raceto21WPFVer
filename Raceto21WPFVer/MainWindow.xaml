@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raceto21WPFVer"
         mc:Ignorable="d"
-        Title="Raceto21" Height="700" Width="900">
+        Title="Raceto21" Height="900" Width="1100">
     <Grid Background="#FFF4C0FF">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
         <Menu VerticalAlignment="Top" Height="23">
             <MenuItem Header="File" FontSize="16">
-                <MenuItem Header="New Game" FontSize="16" Click="MenuItem_Click"/>
+                <MenuItem Header="New Game" FontSize="16" Click="MenuItemNewGame_Click"/>
                 <MenuItem Header="Exit" FontSize="16" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="How To Play" FontSize="16"/>
@@ -27,7 +27,16 @@
         <TextBlock x:Name="AskBox" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="How Many Players Today?" VerticalAlignment="Stretch" Width="236" FontWeight="Bold" TextAlignment="Center" FontSize="16" Margin="0,250,0,0"/>
         <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown"  />
         <Button x:Name="enterButtonMain" Content="Enter" Margin="509,281,235,0" Grid.Row="2" Click="enterButtonMain_Click" Width="56" VerticalAlignment="Top"/>
-
+        <Image x:Name="PlayerAPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerBPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="251,126,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerCPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="386,126,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerDPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="574,130,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerEPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="730,129,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <TextBlock x:Name="PlayerNamePlacementA"  Margin="97,100,748,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="105" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
+        <TextBlock x:Name="PlayerNamePlacementB"  Margin="262,100,583,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="105" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
+        <TextBlock x:Name="PlayerNamePlacementC"  Margin="422,100,422,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="106" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
+        <TextBlock x:Name="PlayerNamePlacementD"  Margin="584,100,260,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="106" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
+        <TextBlock x:Name="PlayerNamePlacementE"  Margin="741,100,103,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="106" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
 
 
     </Grid>

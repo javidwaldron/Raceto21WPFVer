@@ -31,7 +31,7 @@ namespace Raceto21WPFVer
 
             
 
-            // Getting number of players using int obtained 
+            
             for (int i = 0; i < numberOfPlayers; i++)
             {
 

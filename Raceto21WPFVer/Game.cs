@@ -8,6 +8,7 @@ using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Raceto21WPFVer
 {
@@ -19,45 +20,24 @@ namespace Raceto21WPFVer
         public bool validPlayernumbers = false;
         Deck deck = new Deck();
         public int gamesplayed = 0;
+        
 
         List<Player> players = new List<Player>();
 
+        
 
-        public void Setup()
+        public void Setup(int numberOfPlayers)
         {
 
-            //Gets number of players using jay's code/ rebuking if invalid format entered
-            gameEnd = false;
-            Console.WriteLine("How many players? (Please enter a valid whole number between 2 & 8): ");
-            Console.WriteLine();
-            string howManyPlayers = Console.ReadLine();
-            int numberOfplayers;
-
-            while (int.TryParse(howManyPlayers, out numberOfplayers) == false
-                  || numberOfplayers < 1 || numberOfplayers > 8)
-            {
-                Console.WriteLine("Invalid number of players.");
-                Console.Write("How many players?");
-                howManyPlayers = Console.ReadLine();
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine();
-            Console.WriteLine("There are " + numberOfplayers + " playing");
-            Console.WriteLine();
+            
 
             // Getting number of players using int obtained 
-            for (int i = 0; i < numberOfplayers; i++)
+            for (int i = 0; i < numberOfPlayers; i++)
             {
 
                 players.Add(new Player());
             }
 
-            // Delete this comment when done for testing
-            Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine();
 
             //Getting player names
             foreach (Player player in players)
@@ -108,6 +88,10 @@ namespace Raceto21WPFVer
             }
 
         }
+
+
+
+
         // Essentially where offer a card is, asked if they want to be dealt a card or three in a turn
         public void CoreGame()
         {
@@ -376,7 +360,7 @@ namespace Raceto21WPFVer
                         players.Clear();
                         roundEnd = false;
 
-                        Setup();
+                        Setup(0);
                         CoreGame();
 
 

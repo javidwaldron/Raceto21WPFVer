@@ -25,7 +25,7 @@
         <Image x:Name="Bluelogo" Source="/Images/bluecardstrans.png" Grid.Row="1" VerticalAlignment="Top" Height="300" Margin="0,8,0,0"  HorizontalAlignment="Center" Grid.RowSpan="2" StretchDirection="UpOnly"/>
         <TextBlock x:Name="LogoText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="***** RACE TO 21 *****" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Romantic" Foreground="Black" Height="22" Width="348" Margin="0,49,0,0" Grid.RowSpan="2" TextAlignment="Center"/>
         <TextBlock x:Name="AskBox" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="How Many Players Today?" VerticalAlignment="Stretch" Width="236" FontWeight="Bold" TextAlignment="Center" FontSize="16" Margin="0,250,0,0"/>
-        <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 1 - 4" VerticalAlignment="Top" Width="190" />
+        <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown"  />
         <Button x:Name="enterButtonMain" Content="Enter" Margin="509,281,235,0" Grid.Row="2" Click="enterButtonMain_Click" Width="56" VerticalAlignment="Top"/>
 
 

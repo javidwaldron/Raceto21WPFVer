@@ -302,6 +302,8 @@ namespace Raceto21WPFVer
         {
             AssignPlayers();
             ReadyButton.Visibility = Visibility.Collapsed;
+            AskBox.Text = "Ok " + players[0].name + " are you ready for your first card?";
+
         }
     }
 }

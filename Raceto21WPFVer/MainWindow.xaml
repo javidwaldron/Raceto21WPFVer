@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Raceto21WPFVer"
         mc:Ignorable="d"
         Title="Raceto21" Height="900" Width="1100">
-    <Grid Background="#FFF4C0FF">
+    <Grid Background="#FF5659A3">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="38*"/>
@@ -24,7 +24,7 @@
         </Menu>
         <Image x:Name="Bluelogo" Source="/Images/bluecardstrans.png" Grid.Row="1" VerticalAlignment="Top" Height="300" Margin="0,8,0,0"  HorizontalAlignment="Center" Grid.RowSpan="2" StretchDirection="UpOnly"/>
         <TextBlock x:Name="LogoText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="***** RACE TO 21 *****" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" FontFamily="Romantic" Foreground="Black" Height="22" Width="348" Margin="0,49,0,0" Grid.RowSpan="2" TextAlignment="Center"/>
-        <TextBlock x:Name="AskBox" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="How Many Players Today?" VerticalAlignment="Stretch" Width="236" FontWeight="Bold" TextAlignment="Center" FontSize="16" Margin="0,250,0,0"/>
+        <TextBlock x:Name="AskBox" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="How Many Players Today?" Width="430" FontWeight="Bold" TextAlignment="Center" FontSize="16" Margin="0,250,0,0"/>
         <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown" KeyDown="howManyPlayers_KeyDown"  />
 
 
@@ -44,10 +44,10 @@
         <TextBox x:Name="PlayerNameDAskBox" HorizontalAlignment="Left" Margin="652,67,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" KeyDown="PlayerNameDAskBox_KeyDown" PreviewMouseDown="PlayerNameDAskBox_PreviewMouseDown" Visibility="Hidden"/>
         <TextBox x:Name="PlayerNameEAskBox" HorizontalAlignment="Left" Margin="809,67,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" KeyDown="PlayerNameEAskBox_KeyDown" PreviewMouseDown="PlayerNameEAskBox_PreviewMouseDown" Visibility="Hidden"/>
         <TextBlock x:Name="Player_1_Score_and_Holder" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="Player_2_Score_and_Holder" HorizontalAlignment="Left" Margin="10,50,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="Player_3_Score_and_Holder" HorizontalAlignment="Left" Margin="10,89,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock x:Name="Player_4_Score_and_Holder" HorizontalAlignment="Left" Margin="10,145,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <Button x:Name="ReadyButton" Content="Ready?" HorizontalAlignment="Center" Margin="0,336,0,0" Grid.Row="2" VerticalAlignment="Top" Width="214" Click="ReadyButton_Click"/>
+        <TextBlock x:Name="Player_2_Score_and_Holder" HorizontalAlignment="Left" Margin="10,50,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
+        <TextBlock x:Name="Player_3_Score_and_Holder" HorizontalAlignment="Left" Margin="10,89,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
+        <TextBlock x:Name="Player_4_Score_and_Holder" HorizontalAlignment="Left" Margin="10,126,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
+        <Button x:Name="ReadyButton" Content="Ready?" HorizontalAlignment="Center" Margin="0,336,0,0" Grid.Row="2" VerticalAlignment="Top" Width="214" Click="ReadyButton_Click" Visibility="Hidden"/>
 
 
 

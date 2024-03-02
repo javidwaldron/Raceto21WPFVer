@@ -26,17 +26,19 @@ namespace Raceto21WPFVer
             
         }
 
+        //Exit Menu Button
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             System.Environment.Exit(0);
         }
 
+        //Wipes the  how many players text once selected
         private void howManyPlayers_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             howManyPlayers.Text = "";
         }
 
-
+        //Forces a value between 2- 4, once user hits enter key assigns to int number of players 
         private void howManyPlayers_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Return)
@@ -55,7 +57,7 @@ namespace Raceto21WPFVer
                 //Removes Question Box and Enter Button 
                 else
                 {
-                    AskBox.Text = "There are " + numberOfPlayers + " people playing!";
+                    AskBox.Text = "Please Input Your Names and Hit Enter";
                     numberOfPlayers = int.Parse(howManyPlayers.Text);
                     howManyPlayers.Visibility = Visibility.Hidden;
 
@@ -130,7 +132,7 @@ namespace Raceto21WPFVer
         }
 
 
-        // Allows players to enter name after hitting enter
+        // Allows players to enter name after hitting enter, takes input based on visibility of box, determined by number of players
 
         private void PlayerNameAAskBox_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -146,7 +148,13 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementA.Text = PlayerNameAAskBox.Text;
                 PlayerNameAAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
-                Debug.WriteLine("Look for this" + nameenteredcount + "is it this yet" + numberOfPlayers + "");
+
+                if (nameenteredcount == numberOfPlayers)
+                {
+                    ReadyButton.Visibility = Visibility.Visible;
+                }
+
+
             }
 
         }
@@ -164,7 +172,13 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementB.Text = PlayerNameBAskBox.Text;
                 PlayerNameBAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
-                Debug.WriteLine("Look for this" + nameenteredcount + "is it this yet" + numberOfPlayers + "");
+
+                if (nameenteredcount == numberOfPlayers)
+                {
+                    ReadyButton.Visibility = Visibility.Visible;
+                }
+
+
             }
 
 
@@ -182,7 +196,12 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementC.Text = PlayerNameCAskBox.Text;
                 PlayerNameCAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
-                Debug.WriteLine("Look for this" + nameenteredcount + "is it this yet" + numberOfPlayers + "");
+
+                if (nameenteredcount == numberOfPlayers)
+                {
+                    ReadyButton.Visibility = Visibility.Visible;
+                }
+
             }
 
 
@@ -200,7 +219,12 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementD.Text = PlayerNameDAskBox.Text;
                 PlayerNameDAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
-                Debug.WriteLine("Look for this" + nameenteredcount + "is it this yet" + numberOfPlayers + "");
+
+                if (nameenteredcount == numberOfPlayers)
+                {
+                    ReadyButton.Visibility = Visibility.Visible;
+                }
+
             }
 
 
@@ -219,9 +243,18 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementE.Text = PlayerNameEAskBox.Text;
                 PlayerNameEAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
+           
+                if(nameenteredcount ==  numberOfPlayers)
+                {
+                    ReadyButton.Visibility = Visibility.Visible;
+                }
+            
+            
             }
 
         }
+
+        //This assigns the players to each score placement/ player class name. Triggered by ready button.
 
         public void AssignPlayers()
         {
@@ -232,28 +265,30 @@ namespace Raceto21WPFVer
                     case 2:
                         players[0].name = PlayerNamePlacementB.Text;
                         players[1].name = PlayerNamePlacementD.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 is " + players[0].name + " with a score of ";
-                        Player_2_Score_and_Holder.Text = "Player 2 is " + players[1].name + " with a score of ";
+                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " +players[0].score+ "/21";
+                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " +players[1].score+ "/21";
                         break;
 
                     case 3:
                         players[0].name = PlayerNamePlacementB.Text;
                         players[1].name = PlayerNamePlacementC.Text;
                         players[2].name = PlayerNamePlacementD.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 is " + players[0].name + " with a score of ";
-                        Player_2_Score_and_Holder.Text = "Player 2 is " + players[1].name + " with a score of ";
-                        Player_3_Score_and_Holder.Text = "Player 3 is " + players[2].name + " with a score of ";
-                        break;
+                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                        Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                    
+                    break;
 
                     case 4:
                         players[0].name = PlayerNamePlacementA.Text;
                         players[1].name = PlayerNamePlacementB.Text;
                         players[2].name = PlayerNamePlacementD.Text;
                         players[3].name = PlayerNamePlacementE.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 is " + players[0].name + " with a score of ";
-                        Player_2_Score_and_Holder.Text = "Player 2 is " + players[1].name + " with a score of ";
-                        Player_3_Score_and_Holder.Text = "Player 3 is " + players[2].name + " with a score of ";
-                        Player_3_Score_and_Holder.Text = "Player 3 is " + players[3].name + " with a score of ";
+                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                        Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                        Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
+
                     break;
 
                 }
@@ -262,9 +297,11 @@ namespace Raceto21WPFVer
 
         }
 
+        //Triggers the official placement of each player
         private void ReadyButton_Click(object sender, RoutedEventArgs e)
         {
             AssignPlayers();
+            ReadyButton.Visibility = Visibility.Collapsed;
         }
     }
 }

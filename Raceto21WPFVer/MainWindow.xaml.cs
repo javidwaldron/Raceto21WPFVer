@@ -312,10 +312,11 @@ namespace Raceto21WPFVer
 
         }
 
-        //Using a turn marker in combination of a turn integer to shift the available playing options for each player, creating turns.
+        //Using a turn marker in combination of a turn integer to shift the available playing options for each player, creating turns. Called after every stay, pass, 21 or bust
 
         private void GameTurn()
         {
+            //Two PLayer Turn & Game Winning Condition
 
             if (turn == 0 && numberOfPlayers == 2)
             {
@@ -335,10 +336,124 @@ namespace Raceto21WPFVer
                 PlayerDStayButton.Visibility = Visibility.Visible;
                 PlayerDPassButton.Visibility = Visibility.Visible;
 
+            }
+            if(turn == 2 && numberOfPlayers == 2)
+            {
+                PlayerDHitButton.Visibility = Visibility.Collapsed;
+                PlayerDStayButton.Visibility = Visibility.Collapsed;
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+
+                //Insert Victory thing here
 
             }
+            if (turn == 0 && numberOfPlayers == 3)
+            {
 
-             
+                PlayerBHitButton.Visibility = Visibility.Visible;
+                PlayerBStayButton.Visibility = Visibility.Visible;
+                PlayerBPassButton.Visibility = Visibility.Visible;
+
+            }
+            if(turn == 1 && numberOfPlayers == 3)
+            {
+
+                AskBox.Text = "Ok " + players[1].name + " are you ready for your first card?";
+
+                PlayerBHitButton.Visibility = Visibility.Collapsed;
+                PlayerBStayButton.Visibility = Visibility.Collapsed;
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerCHitButton.Visibility = Visibility.Visible;
+                PlayerCStayButton.Visibility = Visibility.Visible;
+                PlayerCPassButton.Visibility = Visibility.Visible;
+
+            }
+            if(turn == 2 && numberOfPlayers == 3)
+            {
+
+                AskBox.Text = "Ok " + players[2].name + " are you ready for your first card?";
+
+                PlayerCHitButton.Visibility = Visibility.Collapsed;
+                PlayerCStayButton.Visibility = Visibility.Collapsed;
+                PlayerCPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerDHitButton.Visibility = Visibility.Visible;
+                PlayerDStayButton.Visibility = Visibility.Visible;
+                PlayerDPassButton.Visibility = Visibility.Visible;
+
+
+            }
+            if(turn == 3 && numberOfPlayers == 3)
+            {
+                PlayerDHitButton.Visibility = Visibility.Collapsed;
+                PlayerDStayButton.Visibility = Visibility.Collapsed;
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+
+                //Insert Victory Thing here
+            }
+            if(turn == 0 && numberOfPlayers == 4)
+            {
+                PlayerAHitButton.Visibility = Visibility.Visible;
+                PlayerAStayButton.Visibility = Visibility.Visible;
+                PlayerAPassButton.Visibility = Visibility.Visible;
+            }
+            if(turn == 1 && numberOfPlayers == 4)
+            {
+                AskBox.Text = "Ok " + players[1].name + " are you ready for your first card?";
+
+                PlayerAHitButton.Visibility = Visibility.Collapsed;
+                PlayerAStayButton.Visibility = Visibility.Collapsed;
+                PlayerAPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerBHitButton.Visibility = Visibility.Visible;
+                PlayerBStayButton.Visibility = Visibility.Visible;
+                PlayerBPassButton.Visibility = Visibility.Visible;
+
+            }
+            if(turn == 2 && numberOfPlayers == 4)
+            {
+                AskBox.Text = "Ok " + players[2].name + " are you ready for your first card?";
+
+                PlayerBHitButton.Visibility = Visibility.Collapsed;
+                PlayerBStayButton.Visibility = Visibility.Collapsed;
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerDHitButton.Visibility = Visibility.Visible;
+                PlayerDStayButton.Visibility = Visibility.Visible;
+                PlayerDPassButton.Visibility = Visibility.Visible;
+
+            }
+            if(turn == 3 && numberOfPlayers == 4)
+            {
+
+                AskBox.Text = "Ok " + players[3].name + " are you ready for your first card?";
+
+                PlayerDHitButton.Visibility = Visibility.Collapsed;
+                PlayerDStayButton.Visibility = Visibility.Collapsed;
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerEHitButton.Visibility = Visibility.Visible;
+                PlayerEStayButton.Visibility = Visibility.Visible;
+                PlayerEPassButton.Visibility = Visibility.Visible;
+
+            }
+            if (turn == 4 && numberOfPlayers == 4)
+            {
+                PlayerEHitButton.Visibility = Visibility.Collapsed;
+                PlayerEStayButton.Visibility = Visibility.Collapsed;
+                PlayerEPassButton.Visibility = Visibility.Collapsed;
+
+                //Insert Victory Thing here
+            }
+
+
+
+
+
+
+
 
         }
 
@@ -380,6 +495,7 @@ namespace Raceto21WPFVer
                 Card card = deck.DealTopCard();
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
 
 
                 // Come back and do visibility of winn, bust stay icons
@@ -393,6 +509,7 @@ namespace Raceto21WPFVer
                     PlayerAHitButton.Visibility = Visibility.Collapsed;
                     PlayerAStayButton.Visibility = Visibility.Collapsed;
                     PlayerAPassButton.Visibility = Visibility.Collapsed;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                     GameTurn();
 
 
@@ -444,8 +561,17 @@ namespace Raceto21WPFVer
 
             }
 
-
-
         }
+  
+            
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }

@@ -28,7 +28,7 @@ namespace Raceto21WPFVer
 
             InitializeComponent();
 
-            
+
         }
 
         //Exit Menu Button
@@ -71,13 +71,13 @@ namespace Raceto21WPFVer
                     {
 
                         players.Add(new Player());
-                   
+
                     }
 
-                    
+
                     PlayerNames();
 
-                    
+
 
                 }
 
@@ -248,13 +248,13 @@ namespace Raceto21WPFVer
                 PlayerNamePlacementE.Text = PlayerNameEAskBox.Text;
                 PlayerNameEAskBox.Visibility = Visibility.Hidden;
                 nameenteredcount++;
-           
-                if(nameenteredcount ==  numberOfPlayers)
+
+                if (nameenteredcount == numberOfPlayers)
                 {
                     ReadyButton.Visibility = Visibility.Visible;
                 }
-            
-            
+
+
             }
 
         }
@@ -264,41 +264,41 @@ namespace Raceto21WPFVer
         public void AssignPlayers()
         {
 
-           
-                switch (numberOfPlayers)
-                {
-                    case 2:
-                        players[0].name = PlayerNamePlacementB.Text;
-                        players[1].name = PlayerNamePlacementD.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " +players[0].score+ "/21";
-                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " +players[1].score+ "/21";
-                        break;
 
-                    case 3:
-                        players[0].name = PlayerNamePlacementB.Text;
-                        players[1].name = PlayerNamePlacementC.Text;
-                        players[2].name = PlayerNamePlacementD.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
-                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
-                        Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
-                    
+            switch (numberOfPlayers)
+            {
+                case 2:
+                    players[0].name = PlayerNamePlacementB.Text;
+                    players[1].name = PlayerNamePlacementD.Text;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
                     break;
 
-                    case 4:
-                        players[0].name = PlayerNamePlacementA.Text;
-                        players[1].name = PlayerNamePlacementB.Text;
-                        players[2].name = PlayerNamePlacementD.Text;
-                        players[3].name = PlayerNamePlacementE.Text;
-                        Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
-                        Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
-                        Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
-                        Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
+                case 3:
+                    players[0].name = PlayerNamePlacementB.Text;
+                    players[1].name = PlayerNamePlacementC.Text;
+                    players[2].name = PlayerNamePlacementD.Text;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
 
                     break;
 
-                }
-            
-            
+                case 4:
+                    players[0].name = PlayerNamePlacementA.Text;
+                    players[1].name = PlayerNamePlacementB.Text;
+                    players[2].name = PlayerNamePlacementD.Text;
+                    players[3].name = PlayerNamePlacementE.Text;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                    Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
+
+                    break;
+
+            }
+
+
 
         }
 
@@ -316,6 +316,7 @@ namespace Raceto21WPFVer
 
         private void GameTurn()
         {
+            deck.Shuffle();
             //Two PLayer Turn & Game Winning Condition
 
             if (turn == 0 && numberOfPlayers == 2)
@@ -337,13 +338,13 @@ namespace Raceto21WPFVer
                 PlayerDPassButton.Visibility = Visibility.Visible;
 
             }
-            if(turn == 2 && numberOfPlayers == 2)
+            if (turn == 2 && numberOfPlayers == 2)
             {
                 PlayerDHitButton.Visibility = Visibility.Collapsed;
                 PlayerDStayButton.Visibility = Visibility.Collapsed;
                 PlayerDPassButton.Visibility = Visibility.Collapsed;
 
-
+                AskBox.Text = "Round Over!";
                 //Insert Victory thing here
 
             }
@@ -355,7 +356,7 @@ namespace Raceto21WPFVer
                 PlayerBPassButton.Visibility = Visibility.Visible;
 
             }
-            if(turn == 1 && numberOfPlayers == 3)
+            if (turn == 1 && numberOfPlayers == 3)
             {
 
                 AskBox.Text = "Ok " + players[1].name + " are you ready for your first card?";
@@ -369,7 +370,7 @@ namespace Raceto21WPFVer
                 PlayerCPassButton.Visibility = Visibility.Visible;
 
             }
-            if(turn == 2 && numberOfPlayers == 3)
+            if (turn == 2 && numberOfPlayers == 3)
             {
 
                 AskBox.Text = "Ok " + players[2].name + " are you ready for your first card?";
@@ -384,22 +385,22 @@ namespace Raceto21WPFVer
 
 
             }
-            if(turn == 3 && numberOfPlayers == 3)
+            if (turn == 3 && numberOfPlayers == 3)
             {
                 PlayerDHitButton.Visibility = Visibility.Collapsed;
                 PlayerDStayButton.Visibility = Visibility.Collapsed;
                 PlayerDPassButton.Visibility = Visibility.Collapsed;
 
-
+                AskBox.Text = "Round Over!";
                 //Insert Victory Thing here
             }
-            if(turn == 0 && numberOfPlayers == 4)
+            if (turn == 0 && numberOfPlayers == 4)
             {
                 PlayerAHitButton.Visibility = Visibility.Visible;
                 PlayerAStayButton.Visibility = Visibility.Visible;
                 PlayerAPassButton.Visibility = Visibility.Visible;
             }
-            if(turn == 1 && numberOfPlayers == 4)
+            if (turn == 1 && numberOfPlayers == 4)
             {
                 AskBox.Text = "Ok " + players[1].name + " are you ready for your first card?";
 
@@ -412,7 +413,7 @@ namespace Raceto21WPFVer
                 PlayerBPassButton.Visibility = Visibility.Visible;
 
             }
-            if(turn == 2 && numberOfPlayers == 4)
+            if (turn == 2 && numberOfPlayers == 4)
             {
                 AskBox.Text = "Ok " + players[2].name + " are you ready for your first card?";
 
@@ -425,7 +426,7 @@ namespace Raceto21WPFVer
                 PlayerDPassButton.Visibility = Visibility.Visible;
 
             }
-            if(turn == 3 && numberOfPlayers == 4)
+            if (turn == 3 && numberOfPlayers == 4)
             {
 
                 AskBox.Text = "Ok " + players[3].name + " are you ready for your first card?";
@@ -445,6 +446,7 @@ namespace Raceto21WPFVer
                 PlayerEStayButton.Visibility = Visibility.Collapsed;
                 PlayerEPassButton.Visibility = Visibility.Collapsed;
 
+                AskBox.Text = "Round Over!";
                 //Insert Victory Thing here
             }
 
@@ -484,8 +486,10 @@ namespace Raceto21WPFVer
         }
 
 
-        // PLACEMENT A GAMEPLAY BOXES HERE !!!!
 
+
+
+        // PLACEMENT A GAMEPLAY BOXES HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         private void PlayerAHitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -496,7 +500,8 @@ namespace Raceto21WPFVer
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
-
+                AskBox.Text = "Would you like another card," + players[0].name + " ?";
+                PlayerAPassButton.Visibility = Visibility.Collapsed;
 
                 // Come back and do visibility of winn, bust stay icons
 
@@ -532,7 +537,7 @@ namespace Raceto21WPFVer
 
                 }
             }
-        
+
         }
 
         private void PlayerAStayButton_Click(object sender, RoutedEventArgs e)
@@ -541,7 +546,7 @@ namespace Raceto21WPFVer
             if (numberOfPlayers == 4)
             {
                 players[0].isStaying = true;
-                players[0].isActive = false;               
+                players[0].isActive = false;
                 turn++;
                 GameTurn();
                 // Add stay  graphic visibility here
@@ -552,7 +557,7 @@ namespace Raceto21WPFVer
         private void PlayerAPassButton_Click(object sender, RoutedEventArgs e)
         {
 
-            if(numberOfPlayers == 4)
+            if (numberOfPlayers == 4)
             {
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
                 players[0].score = 0;
@@ -562,8 +567,587 @@ namespace Raceto21WPFVer
             }
 
         }
-  
-            
+
+
+
+
+
+
+        // PLACENMENT B GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        private void PlayerBHitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 2)
+            {
+                Card card = deck.DealTopCard();
+                players[0].cardsInHand.Add(card);
+                players[0].score = ScoreHand(players[0]);
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                AskBox.Text = "Would you like another card," + players[0].name + " ?";
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+
+                if (players[0].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[0].hasWon = true;
+                    turn++;
+
+                    //Insert Win Visual Here
+
+
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[0].score > 21)
+                {
+                    players[0].isActive = false;
+                    players[0].isBust = true;
+                    busted++;
+
+                    //Insert Busted Visual Here
+
+
+                    turn++;
+                    players[0].score = 0;
+
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+            }
+            else if (numberOfPlayers == 3)
+            {
+                Card card = deck.DealTopCard();
+                players[0].cardsInHand.Add(card);
+                players[0].score = ScoreHand(players[0]);
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                AskBox.Text = "Would you like another card," + players[0].name + " ?";
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[0].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[0].hasWon = true;
+                    turn++;
+
+                    //Insert Win Visual Here
+
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[0].score > 21)
+                {
+                    players[0].isActive = false;
+                    players[0].isBust = true;
+                    busted++;
+
+
+                    // Insert Busted Visual here
+
+                    turn++;
+                    players[0].score = 0;
+
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+
+            }
+            else if (numberOfPlayers == 4)
+            {
+                Card card = deck.DealTopCard();
+                players[1].cardsInHand.Add(card);
+                players[1].score = ScoreHand(players[1]);
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[1].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[1].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[1].score > 21)
+                {
+                    players[1].isActive = false;
+                    players[1].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[1].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " has busted!";
+                    PlayerBHitButton.Visibility = Visibility.Collapsed;
+                    PlayerBStayButton.Visibility = Visibility.Collapsed;
+                    PlayerBPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+
+            }
+
+        }
+
+        private void PlayerBStayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (numberOfPlayers == 2)
+            {
+                players[0].isStaying = true;
+                players[0].isActive = false;
+                turn++;
+                GameTurn();
+                // Add stay  graphic visibility here
+
+            }
+            if (numberOfPlayers == 3)
+            {
+                players[0].isStaying = true;
+                players[0].isActive = false;
+                turn++;
+                GameTurn();
+                // Add stay  graphic visibility here
+
+            }
+            if (numberOfPlayers == 4)
+            {
+                players[1].isStaying = true;
+                players[1].isActive = false;
+                turn++;
+                GameTurn();
+                // Add stay  graphic visibility here
+
+            }
+
+        }
+
+        private void PlayerBPassButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 2)
+            {
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
+                players[0].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+            if (numberOfPlayers == 3)
+            {
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
+                players[0].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+            if (numberOfPlayers == 4)
+            {
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " is sitting out this round!";
+                players[1].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+
+        }
+
+
+        // PLACENMENT C GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        private void PlayerCHitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 3)
+            {
+                Card card = deck.DealTopCard();
+                players[1].cardsInHand.Add(card);
+                players[1].score = ScoreHand(players[1]);
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                PlayerCPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[1].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[1].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerCHitButton.Visibility = Visibility.Collapsed;
+                    PlayerCStayButton.Visibility = Visibility.Collapsed;
+                    PlayerCPassButton.Visibility = Visibility.Collapsed;
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[1].score > 21)
+                {
+                    players[1].isActive = false;
+                    players[1].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[1].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " has busted!";
+                    PlayerCHitButton.Visibility = Visibility.Collapsed;
+                    PlayerCStayButton.Visibility = Visibility.Collapsed;
+                    PlayerCPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+                }
+
+            }
+
+        }
+
+        private void PlayerCStayButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 3)
+            {
+                players[1].isStaying = true;
+                players[1].isActive = false;
+                turn++;
+                GameTurn();
+
+            }
+
+        }
+
+        private void PlayerCPassButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 3)
+            {
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " is sitting out this round!";
+                players[1].score = 0;
+                turn++;
+                GameTurn();
+
+
+            }
+        }
+
+
+        // PLACEMENT D GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        private void PlayerDHitButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (numberOfPlayers == 2)
+            {
+                Card card = deck.DealTopCard();
+                players[1].cardsInHand.Add(card);
+                players[1].score = ScoreHand(players[1]);
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[1].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[1].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[1].score > 21)
+                {
+                    players[1].isActive = false;
+                    players[1].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[1].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " has busted!";
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+
+
+            }
+            if(numberOfPlayers == 3)
+            {
+
+                Card card = deck.DealTopCard();
+                players[2].cardsInHand.Add(card);
+                players[2].score = ScoreHand(players[2]);
+                Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                AskBox.Text = "Would you like another card," + players[2].name + " ?";
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[2].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[2].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[2].score > 21)
+                {
+                    players[2].isActive = false;
+                    players[2].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[2].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " has busted!";
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+
+
+            }
+            if (numberOfPlayers == 4)
+            {
+
+                Card card = deck.DealTopCard();
+                players[2].cardsInHand.Add(card);
+                players[2].score = ScoreHand(players[2]);
+                Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                AskBox.Text = "Would you like another card," + players[2].name + " ?";
+                PlayerDPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[2].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[2].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[2].score > 21)
+                {
+                    players[2].isActive = false;
+                    players[2].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[2].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " has busted!";
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+
+
+            }
+
+        }
+
+        private void PlayerDStayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (numberOfPlayers == 2)
+            {
+                players[1].isStaying = true;
+                players[1].isActive = false;
+                turn++;
+                GameTurn();
+
+            }
+            if(numberOfPlayers == 3)
+            {
+                players[2].isStaying = true;
+                players[2].isActive = false;
+                turn++;
+                GameTurn();
+            }
+            if(numberOfPlayers == 4)
+            {
+                players[3].isStaying = true;
+                players[3].isActive = false;
+                turn++;
+                GameTurn();
+
+            }
+
+
+        }
+
+        private void PlayerDPassButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 3)
+            {
+                Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " is sitting out this round!";
+                players[2].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+            if(numberOfPlayers == 4)
+            {
+                Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " is sitting out this round!";
+                players[2].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+
+        }
+
+        // PLACEMENT E GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        private void PlayerEHitButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(numberOfPlayers == 4)
+            {
+
+                Card card = deck.DealTopCard();
+                players[3].cardsInHand.Add(card);
+                players[3].score = ScoreHand(players[2]);
+                Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
+                AskBox.Text = "Would you like another card," + players[3].name + " ?";
+                PlayerEPassButton.Visibility = Visibility.Collapsed;
+
+                if (players[3].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[2].hasWon = true;
+                    turn++;
+
+                    // Insert Victory Visual Here
+
+
+                    PlayerEHitButton.Visibility = Visibility.Collapsed;
+                    PlayerEStayButton.Visibility = Visibility.Collapsed;
+                    PlayerEPassButton.Visibility = Visibility.Collapsed;
+                    Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
+                    GameTurn();
+
+
+                }
+                if (players[3].score > 21)
+                {
+                    players[3].isActive = false;
+                    players[3].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[3].score = 0;
+
+                    //Insert Busted Visual Here
+
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " has busted!";
+                    PlayerDHitButton.Visibility = Visibility.Collapsed;
+                    PlayerDStayButton.Visibility = Visibility.Collapsed;
+                    PlayerDPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+                }
+            }
+
+
+
+        }
+
+        private void PlayerEStayButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 4)
+            {
+                players[3].isStaying = true;
+                players[3].isActive = false;
+                turn++;
+                GameTurn();
+
+            }
+
+        }
+
+        private void PlayerEPassButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 4)
+            {
+                Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " is sitting out this round!";
+                players[3].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+
+
+
+        }
+   
     
     
     
@@ -572,6 +1156,6 @@ namespace Raceto21WPFVer
     
     
     
-    
-    }
+    }      
+        
 }

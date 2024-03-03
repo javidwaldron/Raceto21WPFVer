@@ -28,11 +28,11 @@
         <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown" KeyDown="howManyPlayers_KeyDown"  />
 
 
-        <Image x:Name="PlayerAPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
-        <Image x:Name="PlayerBPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="251,126,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
-        <Image x:Name="PlayerCPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="386,126,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
-        <Image x:Name="PlayerDPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="574,130,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
-        <Image x:Name="PlayerEPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="730,129,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504"/>
+        <Image x:Name="PlayerAPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerBPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="251,126,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerCPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="386,126,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerDPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="574,130,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerEPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="730,129,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         
         <TextBlock x:Name="PlayerNamePlacementA"  Margin="97,100,748,0" Grid.Row="3" TextWrapping="Wrap" Text="Player Name" VerticalAlignment="Top" Width="105" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>
         <TextBlock x:Name="PlayerNamePlacementB"  Margin="262,100,583,0" Grid.Row="3" TextWrapping="Wrap" Text="Player Name" VerticalAlignment="Top" Width="105" TextAlignment="Center" FontSize="16" Visibility="Hidden"/>

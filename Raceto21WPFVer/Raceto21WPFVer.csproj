@@ -104,5 +104,14 @@
   <ItemGroup>
     <Resource Include="Images\CardSpacing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Stay.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

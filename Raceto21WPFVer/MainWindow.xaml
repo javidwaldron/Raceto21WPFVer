@@ -62,7 +62,7 @@
         <Button x:Name="PlayerDPassButton" Content="Pass" HorizontalAlignment="Left" Margin="686,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerDPassButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerEHitButton" Content="Hit" HorizontalAlignment="Left" Margin="816,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden" Click="PlayerEHitButton_Click"/>
         <Button x:Name="PlayerEStayButton" Content="Stay" HorizontalAlignment="Left" Margin="879,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="50" Visibility="Hidden" Click="PlayerEStayButton_Click"/>
-        <Button x:Name="PlayerEPassButton" Content="Pass" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden" Click="PlayerEPassButton_Click"/>
+        <Button x:Name="PlayerEPassButton" Content="Pass" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden"/>
 
 
 

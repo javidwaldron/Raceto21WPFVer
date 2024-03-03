@@ -21,6 +21,27 @@ namespace Raceto21WPFVer
         public int turn = 0;
         public int busted = 0;
         public bool allPlayersIn = false;
+       
+        
+        //Bools for visuals
+        
+        public bool placementAwin = false;
+        public bool placementBwin = false;
+        public bool placementCwin = false;
+        public bool placementDwin = false;
+        public bool placementEwin = false;
+        public bool placementAstay = false;
+        public bool placementBstay = false;
+        public bool placementCstay = false;
+        public bool placementDstay = false;
+        public bool placementEstay = false;
+        public bool placementAbust = false;
+        public bool placementBbust = false;
+        public bool placementCbust = false;
+        public bool placementDbust = false;
+        public bool placementEbust = false;
+
+
 
         List<Player> players = new List<Player>();
         public MainWindow()
@@ -500,7 +521,7 @@ namespace Raceto21WPFVer
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
-                AskBox.Text = "Would you like another card," + players[0].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[0].name + " ?";
                 PlayerAPassButton.Visibility = Visibility.Collapsed;
 
                 // Come back and do visibility of winn, bust stay icons
@@ -583,7 +604,7 @@ namespace Raceto21WPFVer
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
-                AskBox.Text = "Would you like another card," + players[0].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[0].name + " ?";
                 PlayerBPassButton.Visibility = Visibility.Collapsed;
 
 
@@ -676,7 +697,7 @@ namespace Raceto21WPFVer
                 players[1].cardsInHand.Add(card);
                 players[1].score = ScoreHand(players[1]);
                 Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
-                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[1].name + " ?";
                 PlayerBPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[1].score == 21)
@@ -793,7 +814,7 @@ namespace Raceto21WPFVer
                 players[1].cardsInHand.Add(card);
                 players[1].score = ScoreHand(players[1]);
                 Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
-                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[1].name + " ?";
                 PlayerCPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[1].score == 21)
@@ -873,7 +894,7 @@ namespace Raceto21WPFVer
                 players[1].cardsInHand.Add(card);
                 players[1].score = ScoreHand(players[1]);
                 Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
-                AskBox.Text = "Would you like another card," + players[1].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[1].name + " ?";
                 PlayerDPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[1].score == 21)
@@ -921,7 +942,7 @@ namespace Raceto21WPFVer
                 players[2].cardsInHand.Add(card);
                 players[2].score = ScoreHand(players[2]);
                 Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
-                AskBox.Text = "Would you like another card," + players[2].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[2].name + " ?";
                 PlayerDPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[2].score == 21)
@@ -969,7 +990,7 @@ namespace Raceto21WPFVer
                 players[2].cardsInHand.Add(card);
                 players[2].score = ScoreHand(players[2]);
                 Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
-                AskBox.Text = "Would you like another card," + players[2].name + " ?";
+                AskBox.Text = "Would you like another card, " + players[2].name + " ?";
                 PlayerDPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[2].score == 21)
@@ -1074,7 +1095,7 @@ namespace Raceto21WPFVer
                 players[3].cardsInHand.Add(card);
                 players[3].score = ScoreHand(players[2]);
                 Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
-                AskBox.Text = "Would you like another card," + players[3].name + " ?";
+                AskBox.Text = "Would you like another card,  " + players[3].name + " ?";
                 PlayerEPassButton.Visibility = Visibility.Collapsed;
 
                 if (players[3].score == 21)
@@ -1148,7 +1169,14 @@ namespace Raceto21WPFVer
 
         }
    
-    
+    public void StatusImage()
+        {
+
+
+
+
+
+        }
     
     
     

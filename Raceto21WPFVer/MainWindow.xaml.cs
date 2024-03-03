@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 
 
 namespace Raceto21WPFVer
@@ -12,9 +13,13 @@ namespace Raceto21WPFVer
     {
 
         Game game = new Game();
+        Deck deck = new Deck();
 
         public int numberOfPlayers;
         public int nameenteredcount;
+        public int twentyOneObtained;
+        public int turn = 0;
+        public int busted = 0;
         public bool allPlayersIn = false;
 
         List<Player> players = new List<Player>();
@@ -303,6 +308,143 @@ namespace Raceto21WPFVer
             AssignPlayers();
             ReadyButton.Visibility = Visibility.Collapsed;
             AskBox.Text = "Ok " + players[0].name + " are you ready for your first card?";
+            GameTurn();
+
+        }
+
+        //Using a turn marker in combination of a turn integer to shift the available playing options for each player, creating turns.
+
+        private void GameTurn()
+        {
+
+            if (turn == 0 && numberOfPlayers == 2)
+            {
+                PlayerBHitButton.Visibility = Visibility.Visible;
+                PlayerBStayButton.Visibility = Visibility.Visible;
+                PlayerBPassButton.Visibility = Visibility.Visible;
+            }
+            if (turn == 1 && numberOfPlayers == 2)
+            {
+                AskBox.Text = "Ok " + players[1].name + " are you ready for your first card?";
+
+                PlayerBHitButton.Visibility = Visibility.Collapsed;
+                PlayerBStayButton.Visibility = Visibility.Collapsed;
+                PlayerBPassButton.Visibility = Visibility.Collapsed;
+
+                PlayerDHitButton.Visibility = Visibility.Visible;
+                PlayerDStayButton.Visibility = Visibility.Visible;
+                PlayerDPassButton.Visibility = Visibility.Visible;
+
+
+            }
+
+             
+
+        }
+
+        // Copy pasted over from console 21 code
+        int ScoreHand(Player player)
+        {
+            int score = 0;
+
+            foreach (Card card in player.cardsInHand)
+            {
+                string faceValue = card.ID.Remove(card.ID.Length - 1);
+                switch (faceValue)
+                {
+                    case "K":
+                    case "Q":
+                    case "J":
+                        score = score + 10;
+                        break;
+                    case "A":
+                        score = score + 1;
+                        break;
+                    default:
+                        score = score + int.Parse(faceValue);
+                        break;
+                }
+            }
+            return score;
+        }
+
+
+        // PLACEMENT A GAMEPLAY BOXES HERE !!!!
+
+
+        private void PlayerAHitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 4)
+            {
+                Card card = deck.DealTopCard();
+                players[0].cardsInHand.Add(card);
+                players[0].score = ScoreHand(players[0]);
+
+
+                // Come back and do visibility of winn, bust stay icons
+
+                if (players[0].score == 21)
+                {
+                    twentyOneObtained++;
+                    players[0].hasWon = true;
+                    turn++;
+
+                    PlayerAHitButton.Visibility = Visibility.Collapsed;
+                    PlayerAStayButton.Visibility = Visibility.Collapsed;
+                    PlayerAPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+
+                }
+                if (players[0].score > 21)
+                {
+                    players[0].isActive = false;
+                    players[0].isBust = true;
+                    busted++;
+
+                    turn++;
+                    players[0].score = 0;
+
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
+                    PlayerAHitButton.Visibility = Visibility.Collapsed;
+                    PlayerAStayButton.Visibility = Visibility.Collapsed;
+                    PlayerAPassButton.Visibility = Visibility.Collapsed;
+                    GameTurn();
+
+
+                }
+            }
+        
+        }
+
+        private void PlayerAStayButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (numberOfPlayers == 4)
+            {
+                players[0].isStaying = true;
+                players[0].isActive = false;               
+                turn++;
+                GameTurn();
+                // Add stay  graphic visibility here
+
+            }
+        }
+
+        private void PlayerAPassButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if(numberOfPlayers == 4)
+            {
+                Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
+                players[0].score = 0;
+                turn++;
+                GameTurn();
+
+            }
+
+
 
         }
     }

@@ -52,6 +52,7 @@ namespace Raceto21WPFVer
 
 
         List<Player> players = new List<Player>();
+        List<int> playerScore = new List<int>();
         public MainWindow()
         {
 
@@ -378,6 +379,7 @@ namespace Raceto21WPFVer
                 players.Reverse();
 
                 //Declares winner and catches the placement of winner based on score
+                newRoundButton.Visibility = Visibility.Visible;
 
                 AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
 
@@ -441,6 +443,7 @@ namespace Raceto21WPFVer
                 players.Sort((left, right) => left.score.CompareTo(right.score));
                 players.Reverse();
 
+                newRoundButton.Visibility = Visibility.Visible;
                 //Declares winner and catches the placement of winner based on score
 
                 AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
@@ -520,6 +523,8 @@ namespace Raceto21WPFVer
 
                 players.Sort((left, right) => left.score.CompareTo(right.score));
                 players.Reverse();
+
+                newRoundButton.Visibility = Visibility.Visible;
 
                 //Declares winner and catches the placement of winner based on score
 
@@ -601,6 +606,7 @@ namespace Raceto21WPFVer
                 players[0].score = ScoreHand(players[0]);
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                 AskBox.Text = "Would you like another card, " + players[0].name + " ?";
+               
                 PlayerAPassButton.Visibility = Visibility.Collapsed;
 
                 // Come back and do visibility of winn, bust stay icons
@@ -1360,11 +1366,116 @@ namespace Raceto21WPFVer
                 PlayerEPass.Visibility = Visibility.Visible;
             }
 
+        }
 
 
+        //Very lazy but brain melting
+        private void newRoundButton_Click(object sender, RoutedEventArgs e)
+        {
+            turn = 0;
+
+         placementAwin = false;
+         placementBwin = false;
+         placementCwin = false;
+         placementDwin = false;
+         placementEwin = false;
+
+         placementAstay = false;
+         placementBstay = false;
+         placementCstay = false;
+         placementDstay = false;
+         placementEstay = false;
+
+         placementAbust = false;
+         placementBbust = false;
+         placementCbust = false;
+         placementDbust = false;
+         placementEbust = false;
+
+         placementApass = false;
+         placementBpass = false;
+         placementCpass = false;
+         placementDpass = false;
+         placementEpass = false;
+
+            PlayerAWin.Visibility = Visibility.Hidden;
+            PlayerBWin.Visibility = Visibility.Hidden;
+            PlayerCWin.Visibility = Visibility.Hidden;  
+            PlayerDWin.Visibility = Visibility.Hidden;
+            PlayerEWin.Visibility = Visibility.Hidden;
+
+            PlayerABust.Visibility = Visibility.Hidden;
+            PlayerBBust.Visibility = Visibility.Hidden;
+            PlayerCBust.Visibility = Visibility.Hidden;
+            PlayerDBust.Visibility = Visibility.Hidden;
+            PlayerEBust.Visibility = Visibility.Hidden;
+
+            PlayerAPass.Visibility = Visibility.Hidden;
+            PlayerBPass.Visibility = Visibility.Hidden;
+            PlayerCPass.Visibility = Visibility.Hidden;
+            PlayerDPass.Visibility = Visibility.Hidden;
+            PlayerEPass.Visibility = Visibility.Hidden;
+
+            PlayerAStay.Visibility = Visibility.Hidden;
+            PlayerBStay.Visibility = Visibility.Hidden;
+            PlayerCStay.Visibility = Visibility.Hidden;
+            PlayerDStay.Visibility = Visibility.Hidden;
+            PlayerEStay.Visibility = Visibility.Hidden;
+
+
+
+            foreach (Player player in players)
+            {
+                player.score = 0;
+                player.cardsInHand.Clear();
+
+                player.hasWon = false;
+                player.isBust = false;
+                player. isStaying = false;
+
+            }
+
+
+
+            AssignPlayers();
+            AskBox.Text ="" + players[0].name + " is now Player 1, are you ready for your first card?";
+            GameTurn();
+            newRoundButton.Visibility = Visibility.Hidden;
+
+        }
+
+        private void PlacementAcontinue_Checked(object sender, RoutedEventArgs e)
+        {
+
+            if(PlayerNamePlacementA.Text == players[0].name || PlayerNamePlacementA.Text == players[1].name || PlayerNamePlacementA.Text == players[2].name || PlayerNamePlacementA.Text == players[3].name)
+            {
+                
+            }
 
 
         }
+
+        private void PlacementBcontinue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PlacementCcontinue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PlacementDcontinue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PlacementEcontinue_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+   
+    
     
     
     

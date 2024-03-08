@@ -99,11 +99,11 @@
         <Image x:Name="PlayerEPass" Source="/Images/Pass.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Button x:Name="newRoundButton" Content="New Round?" HorizontalAlignment="Center" Margin="0,361,0,0" Grid.Row="2" VerticalAlignment="Top" Width="190" Click="newRoundButton_Click" Visibility="Hidden"/>
 
-        <RadioButton x:Name="PlacementAcontinue" Content="Continue?"  Margin="-650,107,0,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Checked="PlacementAcontinue_Checked" Visibility="Hidden"/>
-        <RadioButton x:Name="PlacementBcontinue" Content="Continue?"  Margin="344,107,666,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementBcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementCcontinue" Content="Continue?"  Margin="499,107,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementCcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementDcontinue" Content="Continue?"  Margin="650,107,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementDcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementEcontinue" Content="Continue?"  Margin="810,107,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementEcontinue_Checked" Visibility="Hidden" />
+        <RadioButton x:Name="PlacementAcontinue" Content="Continue?"  Margin="-650,80,0,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Checked="PlacementAcontinue_Checked" Visibility="Hidden"/>
+        <RadioButton x:Name="PlacementBcontinue" Content="Continue?"  Margin="344,80,666,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementBcontinue_Checked" Visibility="Hidden" />
+        <RadioButton x:Name="PlacementCcontinue" Content="Continue?"  Margin="499,80,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementCcontinue_Checked" Visibility="Hidden" />
+        <RadioButton x:Name="PlacementDcontinue" Content="Continue?"  Margin="650,80,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementDcontinue_Checked" Visibility="Hidden" />
+        <RadioButton x:Name="PlacementEcontinue" Content="Continue?"  Margin="810,80,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementEcontinue_Checked" Visibility="Hidden" />
 
 
 

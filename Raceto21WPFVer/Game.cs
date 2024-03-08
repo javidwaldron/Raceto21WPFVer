@@ -388,10 +388,10 @@ namespace Raceto21WPFVer
                 playerScore.Sort();
                 playerScore.Reverse();
                 
-                
-               
-               // If busted is equal to total number of those currently playing, busted message plays
-                if(busted == currentPlayers.Count)
+
+
+                // If busted is equal to total number of those currently playing, busted message plays
+                if (busted == currentPlayers.Count)
                 {
                     Console.WriteLine("Oh no, everyone busted!");
                     Console.WriteLine();

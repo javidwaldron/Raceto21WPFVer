@@ -119,7 +119,7 @@ namespace Raceto21WPFVer
         public void PlayerNames()
         {
 
-            switch (players.Count)
+            switch (numberOfPlayers)
             {
                 case 2:
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
@@ -128,7 +128,21 @@ namespace Raceto21WPFVer
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
+
+                    //Spelling out hiding here in case of new round to disable unused placements
+
+                    PlayerAPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementA.Visibility = Visibility.Hidden;
+                    PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    PlayerCPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementC.Visibility = Visibility.Hidden;
+                    PlayerNameCAskBox.Visibility = Visibility.Hidden;
+                    PlayerEPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementE.Visibility = Visibility.Hidden;
+                    PlayerNameEAskBox.Visibility = Visibility.Hidden;
+
                     break;
+               
                 case 3:
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
@@ -139,7 +153,19 @@ namespace Raceto21WPFVer
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
+
+                    //Spelling out hiding here in case of new round to disable unused placements
+
+                    PlayerAPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementA.Visibility = Visibility.Hidden;
+                    PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    PlayerEPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementE.Visibility = Visibility.Hidden;
+                    PlayerNameEAskBox.Visibility = Visibility.Hidden;
+
+
                     break;
+               
                 case 4:
                     PlayerAPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementA.Visibility = Visibility.Visible;
@@ -159,6 +185,73 @@ namespace Raceto21WPFVer
 
 
         }
+
+        public void PlayerNamesNewRound()
+        {
+
+            switch (numberOfPlayers)
+            {
+                case 2:
+                    PlayerBPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    PlayerDPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementD.Visibility = Visibility.Visible;
+                    
+
+                    //Spelling out hiding here in case of new round to disable unused placements
+
+                    PlayerAPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementA.Visibility = Visibility.Hidden;
+                    PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    PlayerCPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementC.Visibility = Visibility.Hidden;
+                    PlayerNameCAskBox.Visibility = Visibility.Hidden;
+                    PlayerEPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementE.Visibility = Visibility.Hidden;
+                    PlayerNameEAskBox.Visibility = Visibility.Hidden;
+
+                    break;
+
+                case 3:
+
+                    PlayerBPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    PlayerCPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementC.Visibility = Visibility.Visible;
+                    PlayerDPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementD.Visibility = Visibility.Visible;
+                    
+
+                    //Spelling out hiding here in case of new round to disable unused placements
+
+                    PlayerAPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementA.Visibility = Visibility.Hidden;
+                    PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    PlayerEPlacementDeck.Visibility = Visibility.Hidden;
+                    PlayerNamePlacementE.Visibility = Visibility.Hidden;
+                    PlayerNameEAskBox.Visibility = Visibility.Hidden;
+
+
+                    break;
+
+                case 4:
+                    PlayerAPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementA.Visibility = Visibility.Visible;
+                    PlayerBPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    PlayerDPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementD.Visibility = Visibility.Visible;
+                    PlayerEPlacementDeck.Visibility = Visibility.Visible;
+                    PlayerNamePlacementE.Visibility = Visibility.Visible;
+                    
+                    break;
+
+            }
+
+
+        }
+
+
         // Move this, this restarts application for new game
         private void MenuItemNewGame_Click(object sender, RoutedEventArgs e)
         {
@@ -378,22 +471,29 @@ namespace Raceto21WPFVer
                 players.Sort((left, right) => left.score.CompareTo(right.score));
                 players.Reverse();
 
+                playerScore.Sort();
+                playerScore.Reverse();
                 //Declares winner and catches the placement of winner based on score
                 newRoundButton.Visibility = Visibility.Visible;
 
                 AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
 
-                if(PlayerNamePlacementB.Text == players[0].name)
+                PlacementBcontinue.Visibility = Visibility.Visible;
+                PlacementDcontinue.Visibility = Visibility.Visible;
+
+                if (PlayerNamePlacementB.Text == players[0].name || players[0].score == playerScore[0])
                 {
                     PlayerBWin.Visibility = Visibility.Visible;
                     PlayerBStay.Visibility = Visibility.Collapsed;
 
                 }
-                else if(PlayerNamePlacementD.Text == players[0].name)
+                else if(PlayerNamePlacementD.Text == players[0].name || players[0].score == playerScore[0] || players[1].score == playerScore[0])
                 {
                     PlayerDWin.Visibility = Visibility.Visible;
                     PlayerDStay.Visibility = Visibility.Collapsed;
                 }
+            
+
 
             }
             if (turn == 0 && numberOfPlayers == 3)
@@ -443,23 +543,30 @@ namespace Raceto21WPFVer
                 players.Sort((left, right) => left.score.CompareTo(right.score));
                 players.Reverse();
 
+                playerScore.Sort();
+                playerScore.Reverse();
+
                 newRoundButton.Visibility = Visibility.Visible;
                 //Declares winner and catches the placement of winner based on score
 
                 AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
 
-                if (PlayerNamePlacementB.Text == players[0].name)
+                PlacementBcontinue.Visibility = Visibility.Visible;
+                PlacementCcontinue.Visibility = Visibility.Visible;
+                PlacementDcontinue.Visibility = Visibility.Visible;
+
+                if (PlayerNamePlacementB.Text == players[0].name || players[0].score == playerScore[0])
                 {
                     PlayerBWin.Visibility = Visibility.Visible;
                     PlayerBStay.Visibility = Visibility.Collapsed;
 
                 }
-                else if (PlayerNamePlacementC.Text == players[0].name)
+                else if (PlayerNamePlacementC.Text == players[0].name || players[1].score == playerScore[0])
                 {
                     PlayerCWin.Visibility = Visibility.Visible;
                     PlayerCStay.Visibility = Visibility.Collapsed;
                 }
-                else if(PlayerNamePlacementD.Text == players[0].name)
+                else if(PlayerNamePlacementD.Text == players[0].name || players[2].score == playerScore[0])
                 {
                     PlayerDWin.Visibility = Visibility.Visible;
                     PlayerDStay.Visibility = Visibility.Collapsed;
@@ -524,29 +631,38 @@ namespace Raceto21WPFVer
                 players.Sort((left, right) => left.score.CompareTo(right.score));
                 players.Reverse();
 
+                playerScore.Sort();
+                playerScore.Reverse();
+
                 newRoundButton.Visibility = Visibility.Visible;
 
                 //Declares winner and catches the placement of winner based on score
 
                 AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
+               
+                PlacementAcontinue.Visibility = Visibility.Visible;
+                PlacementBcontinue.Visibility = Visibility.Visible;
+                PlacementDcontinue.Visibility = Visibility.Visible;
+                PlacementEcontinue.Visibility = Visibility.Visible;
 
-                if (PlayerNamePlacementA.Text == players[0].name)
+
+                if (PlayerNamePlacementA.Text == players[0].name || players[0].score == playerScore[0])
                 {
                     PlayerAWin.Visibility = Visibility.Visible;
                     PlayerAStay.Visibility = Visibility.Collapsed;
 
                 }
-                else if (PlayerNamePlacementB.Text == players[0].name)
+                else if (PlayerNamePlacementB.Text == players[0].name || players[1].score == playerScore[0])
                 {
                     PlayerBWin.Visibility = Visibility.Visible;
                     PlayerBStay.Visibility = Visibility.Collapsed;
                 }
-                else if (PlayerNamePlacementD.Text == players[0].name)
+                else if (PlayerNamePlacementD.Text == players[0].name || players[2].score == playerScore[0])
                 {
                     PlayerDWin.Visibility = Visibility.Visible;
                     PlayerDStay.Visibility = Visibility.Collapsed;
                 }
-                else if (PlayerNamePlacementE.Text == players[0].name)
+                else if (PlayerNamePlacementE.Text == players[0].name || players[3].score == playerScore[0])
                 {
                     PlayerEWin.Visibility = Visibility.Visible;
                     PlayerEStay.Visibility = Visibility.Collapsed;
@@ -603,7 +719,7 @@ namespace Raceto21WPFVer
             {
                 Card card = deck.DealTopCard();
                 players[0].cardsInHand.Add(card);
-                players[0].score = ScoreHand(players[0]);
+                players[0].score = ScoreHand(players[0]);               
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                 AskBox.Text = "Would you like another card, " + players[0].name + " ?";
                
@@ -615,6 +731,7 @@ namespace Raceto21WPFVer
                 {
                     twentyOneObtained++;
                     players[0].hasWon = true;
+                    playerScore.Add(players[0].score);
                     turn++;
 
                     PlayerAHitButton.Visibility = Visibility.Collapsed;
@@ -634,6 +751,7 @@ namespace Raceto21WPFVer
                     placementAbust = true;
                     turn++;
                     players[0].score = 0;
+                    playerScore.Add(players[0].score);
 
                     Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
                     PlayerAHitButton.Visibility = Visibility.Collapsed;
@@ -654,6 +772,7 @@ namespace Raceto21WPFVer
             {
                 players[0].isStaying = true;
                 players[0].isActive = false;
+                playerScore.Add(players[0].score);
                 turn++;
                 placementAstay = true;
                 GameTurn();
@@ -669,6 +788,7 @@ namespace Raceto21WPFVer
             {
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
                 players[0].score = 0;
+                playerScore.Add(players[0].score);
                 turn++;
                 GameTurn();
                 placementApass = true;
@@ -690,7 +810,7 @@ namespace Raceto21WPFVer
             {
                 Card card = deck.DealTopCard();
                 players[0].cardsInHand.Add(card);
-                players[0].score = ScoreHand(players[0]);
+                players[0].score = ScoreHand(players[0]);             
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                 AskBox.Text = "Would you like another card, " + players[0].name + " ?";
                 PlayerBPassButton.Visibility = Visibility.Collapsed;
@@ -700,6 +820,7 @@ namespace Raceto21WPFVer
                 {
                     twentyOneObtained++;
                     players[0].hasWon = true;
+                    playerScore.Add(players[0].score);
                     turn++;
 
                     //Insert Win Visual Here
@@ -725,6 +846,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[0].score = 0;
+                    playerScore.Add(players[0].score);
 
                     Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
                     PlayerBHitButton.Visibility = Visibility.Collapsed;
@@ -739,6 +861,7 @@ namespace Raceto21WPFVer
                 Card card = deck.DealTopCard();
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);
+                
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                 AskBox.Text = "Would you like another card," + players[0].name + " ?";
                 PlayerBPassButton.Visibility = Visibility.Collapsed;
@@ -749,6 +872,7 @@ namespace Raceto21WPFVer
                     players[0].hasWon = true;
                     turn++;
                     placementBwin = true;
+                    playerScore.Add(players[0].score);
 
                     //Insert Win Visual Here
 
@@ -771,6 +895,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[0].score = 0;
+                    playerScore.Add(players[0].score);
 
                     Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " has busted!";
                     PlayerBHitButton.Visibility = Visibility.Collapsed;
@@ -796,6 +921,7 @@ namespace Raceto21WPFVer
                     players[1].hasWon = true;
                     turn++;
                     placementBwin = true;
+                    playerScore.Add(players[1].score);
 
                     // Insert Victory Visual Here
 
@@ -817,6 +943,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[1].score = 0;
+                    playerScore.Add(players[1].score);
 
                     //Insert Busted Visual Here
 
@@ -839,6 +966,7 @@ namespace Raceto21WPFVer
                 players[0].isStaying = true;
                 players[0].isActive = false;
                 turn++;
+                playerScore.Add(players[0].score);
                 placementBstay = true;
                 GameTurn();
                 // Add stay  graphic visibility here
@@ -849,6 +977,7 @@ namespace Raceto21WPFVer
                 players[0].isStaying = true;
                 players[0].isActive = false;
                 turn++;
+                playerScore.Add(players[0].score);
                 placementBstay = true;
                 GameTurn();
                 // Add stay  graphic visibility here
@@ -859,6 +988,7 @@ namespace Raceto21WPFVer
                 players[1].isStaying = true;
                 players[1].isActive = false;
                 turn++;
+                playerScore.Add(players[1].score);
                 placementBstay = true;
                 GameTurn();
                 // Add stay  graphic visibility here
@@ -874,6 +1004,7 @@ namespace Raceto21WPFVer
             {
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
                 players[0].score = 0;
+                playerScore.Add(players[0].score);
                 turn++;
                 placementBpass = true;
                 GameTurn();
@@ -883,6 +1014,7 @@ namespace Raceto21WPFVer
             {
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " is sitting out this round!";
                 players[0].score = 0;
+                playerScore.Add(players[0].score);
                 turn++;
                 placementBpass = true;
                 GameTurn();
@@ -892,6 +1024,7 @@ namespace Raceto21WPFVer
             {
                 Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " is sitting out this round!";
                 players[1].score = 0;
+                playerScore.Add(players[1].score);
                 turn++;
                 placementBpass = true;
                 GameTurn();
@@ -919,6 +1052,7 @@ namespace Raceto21WPFVer
                 {
                     twentyOneObtained++;
                     players[1].hasWon = true;
+                    playerScore.Add(players[1].score);
                     turn++;
                     placementCwin = true;
                     // Insert Victory Visual Here
@@ -941,6 +1075,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[1].score = 0;
+                    playerScore.Add(players[1].score);
 
                     //Insert Busted Visual Here
 
@@ -962,6 +1097,7 @@ namespace Raceto21WPFVer
             {
                 players[1].isStaying = true;
                 players[1].isActive = false;
+                playerScore.Add(players[1].score);
                 turn++;
                 placementCstay = true;
                 GameTurn();
@@ -977,6 +1113,7 @@ namespace Raceto21WPFVer
             {
                 Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " is sitting out this round!";
                 players[1].score = 0;
+                playerScore.Add(players[1].score);
                 turn++;
                 placementCpass = true;
                 GameTurn();
@@ -1003,6 +1140,7 @@ namespace Raceto21WPFVer
                     twentyOneObtained++;
                     players[1].hasWon = true;
                     turn++;
+                    playerScore.Add(players[1].score);
                     placementDwin = true;
                     // Insert Victory Visual Here
 
@@ -1024,8 +1162,9 @@ namespace Raceto21WPFVer
                     
                     turn++;
                     players[1].score = 0;
+                    playerScore.Add(players[1].score);
 
-                    
+
 
 
                     Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " has busted!";
@@ -1053,6 +1192,7 @@ namespace Raceto21WPFVer
                     twentyOneObtained++;
                     players[2].hasWon = true;
                     turn++;
+                    playerScore.Add(players[2].score);
 
                     placementDwin = true;
 
@@ -1073,6 +1213,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[2].score = 0;
+                    playerScore.Add(players[2].score);
                     placementDbust = true;
 
                     //Insert Busted Visual Here
@@ -1102,6 +1243,7 @@ namespace Raceto21WPFVer
                     twentyOneObtained++;
                     players[2].hasWon = true;
                     turn++;
+                    playerScore.Add(players[2].score);
 
                     placementDwin = true;
 
@@ -1122,6 +1264,7 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[2].score = 0;
+                    playerScore.Add(players[2].score);
                     placementDbust = true;
 
                     //Insert Busted Visual Here
@@ -1145,6 +1288,7 @@ namespace Raceto21WPFVer
             {
                 players[1].isStaying = true;
                 players[1].isActive = false;
+                playerScore.Add(players[1].score);
                 turn++;
                 placementDstay = true;
                 GameTurn();
@@ -1155,14 +1299,16 @@ namespace Raceto21WPFVer
                 players[2].isStaying = true;
                 players[2].isActive = false;
                 turn++;
+                playerScore.Add(players[2].score);
                 placementDstay = true;
                 GameTurn();
             }
             if(numberOfPlayers == 4)
             {
-                players[3].isStaying = true;
-                players[3].isActive = false;
+                players[2].isStaying = true;
+                players[2].isActive = false;
                 turn++;
+                playerScore.Add(players[2].score);
                 placementDstay = true;
                 GameTurn();
 
@@ -1178,6 +1324,7 @@ namespace Raceto21WPFVer
             {
                 Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " is sitting out this round!";
                 players[2].score = 0;
+                playerScore.Add(players[2].score);
                 turn++;
                 placementDpass = true;
                 GameTurn();
@@ -1187,6 +1334,7 @@ namespace Raceto21WPFVer
             {
                 Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " is sitting out this round!";
                 players[2].score = 0;
+                playerScore.Add(players[2].score);
                 turn++;
                 placementDpass = true;
                 GameTurn();
@@ -1203,7 +1351,7 @@ namespace Raceto21WPFVer
 
                 Card card = deck.DealTopCard();
                 players[3].cardsInHand.Add(card);
-                players[3].score = ScoreHand(players[2]);
+                players[3].score = ScoreHand(players[3]);
                 Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
                 AskBox.Text = "Would you like another card,  " + players[3].name + " ?";
                 PlayerEPassButton.Visibility = Visibility.Collapsed;
@@ -1211,9 +1359,10 @@ namespace Raceto21WPFVer
                 if (players[3].score == 21)
                 {
                     twentyOneObtained++;
-                    players[2].hasWon = true;
+                    players[3].hasWon = true;
                     turn++;
                     placementEwin = true;
+                    playerScore.Add(players[3].score);
                     // Insert Victory Visual Here
 
 
@@ -1233,11 +1382,12 @@ namespace Raceto21WPFVer
 
                     turn++;
                     players[3].score = 0;
+                    playerScore.Add(players[3].score);
                     placementEbust = true;
 
                     //Insert Busted Visual Here
 
-                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " has busted!";
+                    Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " has busted!";
                     PlayerDHitButton.Visibility = Visibility.Collapsed;
                     PlayerDStayButton.Visibility = Visibility.Collapsed;
                     PlayerDPassButton.Visibility = Visibility.Collapsed;
@@ -1257,6 +1407,7 @@ namespace Raceto21WPFVer
             {
                 players[3].isStaying = true;
                 players[3].isActive = false;
+                playerScore.Add(players[3].score);
                 turn++;
                 placementEstay = true;
                 GameTurn();
@@ -1272,6 +1423,7 @@ namespace Raceto21WPFVer
             {
                 Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " is sitting out this round!";
                 players[3].score = 0;
+                playerScore.Add(players[3].score);
                 turn++;
                 placementEpass = true;
                 GameTurn();
@@ -1422,6 +1574,11 @@ namespace Raceto21WPFVer
             PlayerDStay.Visibility = Visibility.Hidden;
             PlayerEStay.Visibility = Visibility.Hidden;
 
+            PlacementAcontinue.Visibility = Visibility.Hidden;
+            PlacementBcontinue.Visibility = Visibility.Hidden;
+            PlacementCcontinue.Visibility = Visibility.Hidden;
+            PlacementDcontinue.Visibility = Visibility.Hidden;
+            PlacementEcontinue.Visibility = Visibility.Hidden;
 
 
             foreach (Player player in players)
@@ -1436,8 +1593,8 @@ namespace Raceto21WPFVer
             }
 
 
-
-            AssignPlayers();
+            PlayerNamesNewRound();
+            NewRoundPlacementCheck();
             AskBox.Text ="" + players[0].name + " is now Player 1, are you ready for your first card?";
             GameTurn();
             newRoundButton.Visibility = Visibility.Hidden;
@@ -1446,37 +1603,92 @@ namespace Raceto21WPFVer
 
         private void PlacementAcontinue_Checked(object sender, RoutedEventArgs e)
         {
-
-            if(PlayerNamePlacementA.Text == players[0].name || PlayerNamePlacementA.Text == players[1].name || PlayerNamePlacementA.Text == players[2].name || PlayerNamePlacementA.Text == players[3].name)
-            {
-                
-            }
-
+            players.Remove(players[0]);
+            numberOfPlayers--;
+            PlacementAcontinue.Visibility = Visibility.Hidden;
+            Player_4_Score_and_Holder.Text = "";
 
         }
 
         private void PlacementBcontinue_Checked(object sender, RoutedEventArgs e)
         {
+           
+            if(numberOfPlayers == 4)
+            {
+                players.Remove(players[1]);
+                numberOfPlayers--;
+                PlacementBcontinue.Visibility = Visibility.Hidden;
+                Player_3_Score_and_Holder.Text = "";
 
+            }
+            else
+            {
+                players.Remove(players[0]);
+                numberOfPlayers--;
+                PlacementBcontinue.Visibility = Visibility.Hidden;
+                Player_3_Score_and_Holder.Text = "";
+            }
+            
         }
 
         private void PlacementCcontinue_Checked(object sender, RoutedEventArgs e)
         {
-
+            players.Remove(players[1]);
+            numberOfPlayers--;
+            PlacementCcontinue.Visibility = Visibility.Hidden;
+            Player_3_Score_and_Holder.Text = "";
         }
 
         private void PlacementDcontinue_Checked(object sender, RoutedEventArgs e)
         {
+            
+                players.Remove(players[2]);
+                numberOfPlayers--;
+                PlacementDcontinue.Visibility = Visibility.Hidden;
+                Player_3_Score_and_Holder.Text = "";
+
+            
 
         }
 
         private void PlacementEcontinue_Checked(object sender, RoutedEventArgs e)
         {
-
+            players.Remove(players[3]);
+            numberOfPlayers--;
+            PlacementEcontinue.Visibility = Visibility.Hidden;
+            Player_4_Score_and_Holder.Text = "";
         }
    
     
-    
+    private void NewRoundPlacementCheck()
+        {
+            switch (numberOfPlayers)
+            {
+                case 2:
+                    
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    Player_3_Score_and_Holder.Text = "";
+                    Player_4_Score_and_Holder.Text = "";
+                    break;
+
+                case 3:
+                   
+                    Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
+                    Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " : score of " + players[1].score + "/21";
+                    Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
+                    Player_4_Score_and_Holder.Text = "";
+                    break;
+
+
+            }
+
+
+
+
+
+
+        }
     
     
     

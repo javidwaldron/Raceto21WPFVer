@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq; // currently only needed if we use alternate shuffle method
 
 namespace Raceto21WPFVer
@@ -101,7 +102,15 @@ namespace Raceto21WPFVer
             return card;
         }
 
-
+        //Just a test
+        public void ShowAllCards()
+        {
+            foreach (Card card in cardsForGame)
+            {
+                Debug.Write(""+card.ID);
+               
+            }
+        }
 
 
     }

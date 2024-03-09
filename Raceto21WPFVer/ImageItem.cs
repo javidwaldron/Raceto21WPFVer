@@ -6,17 +6,10 @@ using System.Threading.Tasks;
 
 namespace Raceto21WPFVer
 {
-     public class Card
+    public class ImageItem
     {
-      public string ID;
-      public string name;
-   
-    
-    
-    
-    
-    
-    
-    
+
+        public string ImagePath { get; set; }
+        public string ID;
     }
 }

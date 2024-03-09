@@ -57,7 +57,7 @@ namespace Raceto21WPFVer
         {
 
             InitializeComponent();
-
+            deck.ShowAllCards();
 
         }
 
@@ -723,6 +723,7 @@ namespace Raceto21WPFVer
             if (numberOfPlayers == 4)
             {
                 Card card = deck.DealTopCard();
+
                 players[0].cardsInHand.Add(card);
                 players[0].score = ScoreHand(players[0]);               
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";

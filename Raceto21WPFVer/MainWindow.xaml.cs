@@ -194,9 +194,11 @@ namespace Raceto21WPFVer
                 case 2:
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    PlayerNamePlacementB.Text = players[0].name;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
-                    
+                    PlayerNamePlacementD.Text = players[1].name;
+
 
                     //Spelling out hiding here in case of new round to disable unused placements
 
@@ -216,11 +218,14 @@ namespace Raceto21WPFVer
 
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    PlayerNamePlacementB.Text = players[0].name;
                     PlayerCPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementC.Visibility = Visibility.Visible;
+                    PlayerNamePlacementC.Text = players[1].name;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
-                    
+                    PlayerNamePlacementD.Text = players[2].name;
+
 
                     //Spelling out hiding here in case of new round to disable unused placements
 
@@ -473,7 +478,7 @@ namespace Raceto21WPFVer
                 //Declares winner and catches the placement of winner based on score
                 newRoundButton.Visibility = Visibility.Visible;
 
-                AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
+                AskBox.Text = "Round Over!!!";
 
                 PlacementBcontinue.Visibility = Visibility.Visible;
                 PlacementDcontinue.Visibility = Visibility.Visible;
@@ -484,7 +489,7 @@ namespace Raceto21WPFVer
                     PlayerBStay.Visibility = Visibility.Collapsed;
 
                 }
-                else if(players[1].hasWon == true || players[1].score == playerScore[0] && players[1].isStaying == true)
+                if(players[1].hasWon == true || players[1].score == playerScore[0] && players[1].isStaying == true)
                 {
                     PlayerDWin.Visibility = Visibility.Visible;
                     PlayerDStay.Visibility = Visibility.Collapsed;
@@ -543,7 +548,7 @@ namespace Raceto21WPFVer
                 newRoundButton.Visibility = Visibility.Visible;
                 //Declares winner and catches the placement of winner based on score
 
-                AskBox.Text = "Round Over! Player " + playerScore[0] + ", is the winner!!!";
+                AskBox.Text = "Round Over!!!";
 
                 PlacementBcontinue.Visibility = Visibility.Visible;
                 PlacementCcontinue.Visibility = Visibility.Visible;
@@ -555,12 +560,12 @@ namespace Raceto21WPFVer
                     PlayerBStay.Visibility = Visibility.Collapsed;
 
                 }
-                else if (players[1].hasWon == true || players[1].score == playerScore[0] && players[1].isStaying == true)
+                if (players[1].hasWon == true || players[1].score == playerScore[0] && players[1].isStaying == true)
                 {
                     PlayerCWin.Visibility = Visibility.Visible;
                     PlayerCStay.Visibility = Visibility.Collapsed;
                 }
-                else if(players[2].hasWon == true || players[2].score == playerScore[0] && players[2].isStaying == true)
+                if(players[2].hasWon == true || players[2].score == playerScore[0] && players[2].isStaying == true)
                 {
                     PlayerDWin.Visibility = Visibility.Visible;
                     PlayerDStay.Visibility = Visibility.Collapsed;
@@ -630,7 +635,7 @@ namespace Raceto21WPFVer
 
                 //Declares winner and catches the placement of winner based on score
 
-                AskBox.Text = "Round Over! Player " + players[0].name + ", is the winner!!!";
+                AskBox.Text = "Round Over!!!";
                
                 PlacementAcontinue.Visibility = Visibility.Visible;
                 PlacementBcontinue.Visibility = Visibility.Visible;
@@ -1596,64 +1601,180 @@ namespace Raceto21WPFVer
 
         }
 
-        private void PlacementAcontinue_Checked(object sender, RoutedEventArgs e)
+
+
+        private void PlacementAcontinue_Click(object sender, RoutedEventArgs e)
         {
-            players.Remove(players[0]);
-            numberOfPlayers--;
-            PlacementAcontinue.Visibility = Visibility.Hidden;
-            Player_4_Score_and_Holder.Text = "";
-
-        }
-
-        private void PlacementBcontinue_Checked(object sender, RoutedEventArgs e)
-        {
-           
-            if(numberOfPlayers == 4)
-            {
-                players.Remove(players[1]);
-                numberOfPlayers--;
-                PlacementBcontinue.Visibility = Visibility.Hidden;
-                Player_3_Score_and_Holder.Text = "";
-
-            }
-            else
+            if (numberOfPlayers == 4)
             {
                 players.Remove(players[0]);
                 numberOfPlayers--;
-                PlacementBcontinue.Visibility = Visibility.Hidden;
+                
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
                 Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
             }
-            
+           else if (numberOfPlayers == 3)
+            {
+                players.Remove(players[0]);
+                numberOfPlayers--;
+               
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+
+
+            }
+            else if (numberOfPlayers == 2)
+            {
+                //insert void reaction here
+            }
+
+
+            PlacementAcontinue.Visibility = Visibility.Hidden;
+
+
         }
 
-        private void PlacementCcontinue_Checked(object sender, RoutedEventArgs e)
+        private void PlacementBcontinue_Click(object sender, RoutedEventArgs e)
         {
-            players.Remove(players[1]);
-            numberOfPlayers--;
+            if (numberOfPlayers == 4)
+            {
+                players.Remove(players[1]);
+                numberOfPlayers--;
+                
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+
+            }
+           else if(numberOfPlayers == 3)
+            {
+                players.Remove(players[0]);
+                numberOfPlayers--;
+                
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+            }
+            else if(numberOfPlayers == 2)
+            {
+                // insert void player reaction
+       
+            }
+
+            PlacementBcontinue.Visibility = Visibility.Hidden;
+
+
+        }
+
+        private void PlacementCcontinue_Click(object sender, RoutedEventArgs e)
+        {
+           
+            if (numberOfPlayers == 3)
+            {
+                players.Remove(players[1]);
+                numberOfPlayers--;
+                
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+
+
+            }
+            else if (numberOfPlayers == 2)
+            {
+                //insert void reaction here
+            }
+
             PlacementCcontinue.Visibility = Visibility.Hidden;
-            Player_3_Score_and_Holder.Text = "";
+
+
         }
 
-        private void PlacementDcontinue_Checked(object sender, RoutedEventArgs e)
+        private void PlacementDcontinue_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (numberOfPlayers == 4)
+            {
                 players.Remove(players[2]);
                 numberOfPlayers--;
-                PlacementDcontinue.Visibility = Visibility.Hidden;
+                
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
                 Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+            }
+           else if (numberOfPlayers == 3)
+            {
+                players.Remove(players[2]);
+                numberOfPlayers--;
+                
 
-            
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+
+
+            }
+            else if (numberOfPlayers == 2)
+            {
+                //insert void reaction here
+            }
+
+            PlacementDcontinue.Visibility = Visibility.Hidden;
+
 
         }
 
-        private void PlacementEcontinue_Checked(object sender, RoutedEventArgs e)
+        private void PlacementEcontinue_Click(object sender, RoutedEventArgs e)
         {
-            players.Remove(players[3]);
-            numberOfPlayers--;
+            if (numberOfPlayers == 4)
+            {
+                players.Remove(players[3]);
+                numberOfPlayers--;
+                
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+            }
+            else if(numberOfPlayers == 3)
+            {
+                players.Remove(players[2]);
+                numberOfPlayers--;
+                
+
+                Player_1_Score_and_Holder.Text = "";
+                Player_2_Score_and_Holder.Text = "";
+                Player_3_Score_and_Holder.Text = "";
+                Player_4_Score_and_Holder.Text = "";
+
+
+            }
+           else if (numberOfPlayers == 2)
+            {
+                //insert void reaction here
+            }
+
             PlacementEcontinue.Visibility = Visibility.Hidden;
-            Player_4_Score_and_Holder.Text = "";
+
+
         }
-   
+  
+    
+    
+    
     
     
     

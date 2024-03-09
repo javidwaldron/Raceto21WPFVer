@@ -55,19 +55,19 @@
 
         <Button x:Name="PlayerAHitButton" Content="Hit" HorizontalAlignment="Left" Margin="164,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="51" Click="PlayerAHitButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerAStayButton" Content="Stay" HorizontalAlignment="Left" Margin="226,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="51" Click="PlayerAStayButton_Click" Visibility="Hidden"/>
-        <Button x:Name="PlayerAPassButton" Content="Pass" HorizontalAlignment="Left" Margin="198,28,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerAPassButton_Click" Visibility="Hidden"/>
+        <Button x:Name="PlayerAPassButton" Content="Fold" HorizontalAlignment="Left" Margin="198,28,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerAPassButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerBHitButton" Content="Hit" HorizontalAlignment="Left" Margin="330,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="51" Click="PlayerBHitButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerBStayButton" Content="Stay" HorizontalAlignment="Left" Margin="390,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="50" Click="PlayerBStayButton_Click" Visibility="Hidden"/>
-        <Button x:Name="PlayerBPassButton" Content="Pass" HorizontalAlignment="Left" Margin="363,28,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerBPassButton_Click" Visibility="Hidden"/>
+        <Button x:Name="PlayerBPassButton" Content="Fold" HorizontalAlignment="Left" Margin="363,28,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerBPassButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerCHitButton" Content="Hit" HorizontalAlignment="Left" Margin="486,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerCHitButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerCStayButton" Content="Stay" HorizontalAlignment="Left" Margin="550,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="50" Click="PlayerCStayButton_Click" Visibility="Hidden"/>
-        <Button x:Name="PlayerCPassButton" Content="Pass" HorizontalAlignment="Center" Margin="0,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerCPassButton_Click" Visibility="Hidden"/>
+        <Button x:Name="PlayerCPassButton" Content="Fold" HorizontalAlignment="Center" Margin="0,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerCPassButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerDHitButton" Content="Hit" HorizontalAlignment="Left" Margin="659,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerDHitButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerDStayButton" Content="Stay" HorizontalAlignment="Left" Margin="722,67,0,0" Grid.Row="3" VerticalAlignment="Top" Width="50" Click="PlayerDStayButton_Click" Visibility="Hidden"/>
-        <Button x:Name="PlayerDPassButton" Content="Pass" HorizontalAlignment="Left" Margin="686,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerDPassButton_Click" Visibility="Hidden"/>
+        <Button x:Name="PlayerDPassButton" Content="Fold" HorizontalAlignment="Left" Margin="686,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Click="PlayerDPassButton_Click" Visibility="Hidden"/>
         <Button x:Name="PlayerEHitButton" Content="Hit" HorizontalAlignment="Left" Margin="816,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden" Click="PlayerEHitButton_Click"/>
         <Button x:Name="PlayerEStayButton" Content="Stay" HorizontalAlignment="Left" Margin="879,70,0,0" Grid.Row="3" VerticalAlignment="Top" Width="50" Visibility="Hidden" Click="PlayerEStayButton_Click"/>
-        <Button x:Name="PlayerEPassButton" Content="Pass" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden"/>
+        <Button x:Name="PlayerEPassButton" Content="Fold" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden"/>
 
 
         <Image x:Name="PlayerAWin" Source="/Images/Win.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
@@ -99,11 +99,11 @@
         <Image x:Name="PlayerEPass" Source="/Images/Pass.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Button x:Name="newRoundButton" Content="New Round?" HorizontalAlignment="Center" Margin="0,361,0,0" Grid.Row="2" VerticalAlignment="Top" Width="190" Click="newRoundButton_Click" Visibility="Hidden"/>
 
-        <RadioButton x:Name="PlacementAcontinue" Content="Continue?"  Margin="-650,80,0,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Checked="PlacementAcontinue_Checked" Visibility="Hidden"/>
-        <RadioButton x:Name="PlacementBcontinue" Content="Continue?"  Margin="344,80,666,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementBcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementCcontinue" Content="Continue?"  Margin="499,80,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementCcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementDcontinue" Content="Continue?"  Margin="650,80,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementDcontinue_Checked" Visibility="Hidden" />
-        <RadioButton x:Name="PlacementEcontinue" Content="Continue?"  Margin="810,80,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="PlacementEcontinue_Checked" Visibility="Hidden" />
+        <Button x:Name="PlacementAcontinue" Content="Opt Out?"  Margin="-650,80,0,0" Grid.Row="3"  VerticalAlignment="Top" HorizontalAlignment="Center" Click="PlacementAcontinue_Click" Visibility="Hidden"  />
+        <Button x:Name="PlacementBcontinue" Content="Opt Out?"  Margin="344,80,666,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementBcontinue_Click" Visibility="Hidden" />
+        <Button x:Name="PlacementCcontinue" Content="Opt Out?"  Margin="499,80,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementCcontinue_Click" Visibility="Hidden" />
+        <Button x:Name="PlacementDcontinue" Content="Opt Out?"  Margin="650,80,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementDcontinue_Click" Visibility="Hidden" />
+        <Button x:Name="PlacementEcontinue" Content="Opt Out?"  Margin="810,80,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementEcontinue_Click" Visibility="Hidden" />
 
 
 

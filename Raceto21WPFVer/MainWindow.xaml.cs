@@ -115,7 +115,7 @@ namespace Raceto21WPFVer
 
         }
 
-        // Enables player placement visibility and prompts name entering ask boxes
+        // Enables player placement visibility and prompts name entering ask boxes+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public void PlayerNames()
         {
 
@@ -129,7 +129,7 @@ namespace Raceto21WPFVer
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
 
-                    //Spelling out hiding here in case of new round to disable unused placements
+                    
 
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
@@ -154,7 +154,7 @@ namespace Raceto21WPFVer
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
 
-                    //Spelling out hiding here in case of new round to disable unused placements
+                    
 
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
@@ -186,6 +186,8 @@ namespace Raceto21WPFVer
 
         }
 
+
+        //For Use When starting a new round, fixes a bug+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public void PlayerNamesNewRound()
         {
 
@@ -200,7 +202,7 @@ namespace Raceto21WPFVer
                     PlayerNamePlacementD.Text = players[1].name;
 
 
-                    //Spelling out hiding here in case of new round to disable unused placements
+                    
 
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
@@ -227,7 +229,7 @@ namespace Raceto21WPFVer
                     PlayerNamePlacementD.Text = players[2].name;
 
 
-                    //Spelling out hiding here in case of new round to disable unused placements
+                    
 
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
@@ -257,7 +259,7 @@ namespace Raceto21WPFVer
         }
 
 
-        // Move this, this restarts application for new game
+        // Move this, this restarts application for new game+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private void MenuItemNewGame_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
@@ -265,7 +267,7 @@ namespace Raceto21WPFVer
         }
 
 
-        // Allows players to enter name after hitting enter, takes input based on visibility of box, determined by number of players
+        // Allows players to enter name after hitting enter, takes input based on visibility of box, determined by number of players, all lead to ready player button activate once entered names, equal player count+++++++++++++++++
 
         private void PlayerNameAAskBox_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -387,7 +389,7 @@ namespace Raceto21WPFVer
 
         }
 
-        //This assigns the players to each score placement/ player class name. Triggered by ready button.
+        //This assigns the players to each score placement/ player class name. Triggered by ready button.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         public void AssignPlayers()
         {
@@ -430,7 +432,11 @@ namespace Raceto21WPFVer
 
         }
 
-        //Triggers the official placement of each player
+        //Triggers the official first start of the game+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       
+        
+        
+        
         private void ReadyButton_Click(object sender, RoutedEventArgs e)
         {
             AssignPlayers();
@@ -440,13 +446,14 @@ namespace Raceto21WPFVer
 
         }
 
-        //Using a turn marker in combination of a turn integer to shift the available playing options for each player, creating turns. Called after every stay, pass, 21 or bust
+        //Using a turn marker in combination of a turn integer to shift the available playing options for each player, creating turns. Called after every stay, pass, 21 or bust.
+        //Also checks the score integer, and will declare multiple winners if player score matches the number one spot of the collective score collection.
 
         private void GameTurn()
         {
             deck.Shuffle();
             StatusImage();
-            //Two PLayer Turn & Game Winning Condition
+            
 
             if (turn == 0 && numberOfPlayers == 2)
             {
@@ -475,7 +482,7 @@ namespace Raceto21WPFVer
 
                 playerScore.Sort();
                 playerScore.Reverse();
-                //Declares winner and catches the placement of winner based on score
+                
                 newRoundButton.Visibility = Visibility.Visible;
 
                 AskBox.Text = "Round Over!!!";
@@ -546,7 +553,7 @@ namespace Raceto21WPFVer
                 playerScore.Reverse();
 
                 newRoundButton.Visibility = Visibility.Visible;
-                //Declares winner and catches the placement of winner based on score
+               
 
                 AskBox.Text = "Round Over!!!";
 
@@ -573,7 +580,7 @@ namespace Raceto21WPFVer
 
 
 
-                //Insert Victory Thing here
+                
             }
             if (turn == 0 && numberOfPlayers == 4)
             {
@@ -633,7 +640,6 @@ namespace Raceto21WPFVer
 
                 newRoundButton.Visibility = Visibility.Visible;
 
-                //Declares winner and catches the placement of winner based on score
 
                 AskBox.Text = "Round Over!!!";
                
@@ -677,7 +683,9 @@ namespace Raceto21WPFVer
 
         }
 
-        // Copy pasted over from console 21 code
+        // CALCULATES SCORE IN HAND FOR EACH PLAYER BASED ON CARD VALUE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       
+        
         int ScoreHand(Player player)
         {
             int score = 0;
@@ -707,7 +715,7 @@ namespace Raceto21WPFVer
 
 
 
-        // PLACEMENT A GAMEPLAY BOXES HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PLACEMENT A GAMEPLAY BOXES HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void PlayerAHitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -799,7 +807,8 @@ namespace Raceto21WPFVer
 
 
 
-        // PLACENMENT B GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PLACENMENT B GAMEPLAY BOXES HERE++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       
         private void PlayerBHitButton_Click(object sender, RoutedEventArgs e)
         {
 
@@ -1031,7 +1040,7 @@ namespace Raceto21WPFVer
         }
 
 
-        // PLACENMENT C GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PLACENMENT C GAMEPLAY BOXES HERE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void PlayerCHitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -1120,7 +1129,7 @@ namespace Raceto21WPFVer
         }
 
 
-        // PLACEMENT D GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PLACEMENT D GAMEPLAY BOXES HERE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private void PlayerDHitButton_Click(object sender, RoutedEventArgs e)
         {
             if (numberOfPlayers == 2)
@@ -1340,7 +1349,7 @@ namespace Raceto21WPFVer
 
         }
 
-        // PLACEMENT E GAMEPLAY BOXES HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PLACEMENT E GAMEPLAY BOXES HERE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private void PlayerEHitButton_Click(object sender, RoutedEventArgs e)
         {
             if(numberOfPlayers == 4)
@@ -1431,6 +1440,9 @@ namespace Raceto21WPFVer
 
         }
    
+
+        //TRIGGERS FOR THE DIFFERENT IMAGES I MADE TO REFLECT EACH PLAYERS STATUS AT THE END OF A TURN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     public void StatusImage()
         {
 
@@ -1518,9 +1530,13 @@ namespace Raceto21WPFVer
         }
 
 
-        //Very lazy but brain melting
+        //NEW ROUND MECHANICS, RESETS ALL PLAYER VALUES, RESETS SCORE LIST, ASSIGNS PLAYERS TO SCORE BOXES AND CONTINUES GAME ROUNDS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      
         private void newRoundButton_Click(object sender, RoutedEventArgs e)
         {
+            Deck deck = new Deck();
+
+
             turn = 0;
 
          placementAwin = false;
@@ -1601,7 +1617,7 @@ namespace Raceto21WPFVer
 
         }
 
-
+        // PLAYER REMOVAL SYSTEM FOR AT THE END OF ROUND, BASED ON AMOUNT OF PEOPLE PLAYING AND PLAYER PLACEMENT TO REMOVE AND SHIFT PLAYER NUMBERS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void PlacementAcontinue_Click(object sender, RoutedEventArgs e)
         {

@@ -180,5 +180,17 @@
     <Resource Include="Images\QH.png" />
     <Resource Include="Images\QS.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="kingtransback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kingtransback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kingtranswhiteflip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kingbackwhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -139,9 +139,11 @@ namespace Raceto21WPFVer
                 case 2:
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerNameBAskBox.Visibility = Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
+                    BlackPlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
 
 
@@ -149,12 +151,15 @@ namespace Raceto21WPFVer
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
                     PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementA.Visibility = Visibility.Hidden;
                     PlayerCPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementC.Visibility = Visibility.Hidden;
                     PlayerNameCAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementC.Visibility = Visibility.Hidden;
                     PlayerEPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementE.Visibility = Visibility.Hidden;
                     PlayerNameEAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementE.Visibility = Visibility.Hidden;
 
                     break;
 
@@ -162,21 +167,26 @@ namespace Raceto21WPFVer
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
                     PlayerNameBAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerCPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementC.Visibility = Visibility.Visible;
                     PlayerNameCAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementC.Visibility= Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementD.Visibility = Visibility.Visible;
 
 
 
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
                     PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementA.Visibility = Visibility.Hidden;
                     PlayerEPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementE.Visibility = Visibility.Hidden;
                     PlayerNameEAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementE.Visibility = Visibility.Hidden; 
 
 
                     break;
@@ -185,15 +195,22 @@ namespace Raceto21WPFVer
                     PlayerAPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementA.Visibility = Visibility.Visible;
                     PlayerNameAAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementA.Visibility= Visibility.Visible;
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
                     PlayerNameBAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNameDAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementD.Visibility = Visibility.Visible;
                     PlayerEPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementE.Visibility = Visibility.Visible;
                     PlayerNameEAskBox.Visibility = Visibility.Visible;
+                    BlackPlacementE.Visibility= Visibility.Visible;
+
+                    BlackPlacementC.Visibility = Visibility.Hidden;
+
                     break;
 
             }
@@ -222,12 +239,15 @@ namespace Raceto21WPFVer
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
                     PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementA.Visibility = Visibility.Hidden;
                     PlayerCPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementC.Visibility = Visibility.Hidden;
                     PlayerNameCAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementC.Visibility= Visibility.Hidden;
                     PlayerEPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementE.Visibility = Visibility.Hidden;
                     PlayerNameEAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementE.Visibility = Visibility.Hidden;
 
                     break;
 
@@ -249,9 +269,11 @@ namespace Raceto21WPFVer
                     PlayerAPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementA.Visibility = Visibility.Hidden;
                     PlayerNameAAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementA.Visibility = Visibility.Hidden;
                     PlayerEPlacementDeck.Visibility = Visibility.Hidden;
                     PlayerNamePlacementE.Visibility = Visibility.Hidden;
                     PlayerNameEAskBox.Visibility = Visibility.Hidden;
+                    BlackPlacementE.Visibility = Visibility.Hidden;
 
 
                     break;
@@ -259,12 +281,16 @@ namespace Raceto21WPFVer
                 case 4:
                     PlayerAPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementA.Visibility = Visibility.Visible;
+                    BlackPlacementA.Visibility= Visibility.Visible;
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
+                    BlackPlacementD.Visibility = Visibility.Visible;
                     PlayerEPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementE.Visibility = Visibility.Visible;
+                    BlackPlacementE.Visibility= Visibility.Visible;
 
                     break;
 
@@ -2150,7 +2176,6 @@ namespace Raceto21WPFVer
 
         }
 
-
-
+       
     }     
 }

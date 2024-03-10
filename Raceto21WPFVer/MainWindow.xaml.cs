@@ -72,7 +72,7 @@ namespace Raceto21WPFVer
 
             
 
-            PlayerACardTest.Source = new BitmapImage(new Uri(@"/Images/7C.png", UriKind.Relative));
+            
 
         }
 
@@ -747,11 +747,13 @@ namespace Raceto21WPFVer
                 
                 Card card = deck.DealTopCard();
                  
-                
-
                 players[0].cardsInHand.Add(card);
 
-                
+                UpdatePlayerAUI();
+
+                Debug.WriteLine("*************** JAVID LOOK HERE *************" + players[0].cardsInHand[0].ID + "!!!!!!!!!!!!");
+                Debug.WriteLine(@GetCardImageFilePath(""+ players[0].cardsInHand[0].ID));
+
 
                 players[0].score = ScoreHand(players[0]);               
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
@@ -1817,10 +1819,28 @@ namespace Raceto21WPFVer
 
         }
   
+    public string GetCardImageFilePath(string cardId)
+        {
+
+            return "/Images/" + (cardId) + ".png";
+        }
     
     
-    
-    
+    public void UpdatePlayerAUI()
+        {
+            if (players[0].cardsInHand.Count == 1)
+            {
+                string cardID = players[0].cardsInHand[0].ID;
+
+                PlayerACardTest.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
+
+                
+            }
+
+
+
+
+        }
     
     
     

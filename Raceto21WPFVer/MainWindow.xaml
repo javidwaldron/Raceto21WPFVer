@@ -70,33 +70,33 @@
         <Button x:Name="PlayerEPassButton" Content="Fold" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden"/>
 
 
-        <Image x:Name="PlayerAWin" Source="/Images/Win.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerAStay" Source="/Images/Stay.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerABust" Source="/Images/Bust.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerAPass" Source="/Images/Pass.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerAWin" Source="/Images/Win.png" Height="197" Margin="96,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Canvas.ZIndex="2" Visibility="Hidden"/>
+        <Image x:Name="PlayerAStay" Source="/Images/Stay.png" Height="197" Margin="96,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerABust" Source="/Images/Bust.png" Height="197" Margin="96,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerAPass" Source="/Images/Pass.png" Height="197" Margin="96,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
 
-        <Image x:Name="PlayerBWin" Source="/Images/Win.png" Height="197" Margin="251,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerBStay" Source="/Images/Stay.png" Height="197" Margin="251,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerBBust" Source="/Images/Bust.png" Height="197" Margin="251,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerBPass" Source="/Images/Pass.png" Height="197" Margin="251,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerBWin" Source="/Images/Win.png" Height="197" Margin="265,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Canvas.ZIndex="2" Visibility="Hidden"/>
+        <Image x:Name="PlayerBStay" Source="/Images/Stay.png" Height="197" Margin="265,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerBBust" Source="/Images/Bust.png" Height="197" Margin="265,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerBPass" Source="/Images/Pass.png" Height="197" Margin="265,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
 
-        <Image x:Name="PlayerCWin" Source="/Images/Win.png" Height="197" Margin="386,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerCStay" Source="/Images/Stay.png" Height="197" Margin="386,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerCBust" Source="/Images/Bust.png" Height="197" Margin="386,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerCPass" Source="/Images/Pass.png" Height="197" Margin="386,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerCWin" Source="/Images/Win.png" Height="197" Margin="400,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Canvas.ZIndex="2" Visibility="Hidden"/>
+        <Image x:Name="PlayerCStay" Source="/Images/Stay.png" Height="197" Margin="400,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerCBust" Source="/Images/Bust.png" Height="197" Margin="400,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerCPass" Source="/Images/Pass.png" Height="197" Margin="400,170,386,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
 
-        <Image x:Name="PlayerDWin" Source="/Images/Win.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerDStay" Source="/Images/Stay.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerDBust" Source="/Images/Bust.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerDPass" Source="/Images/Pass.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerDWin" Source="/Images/Win.png" Height="197" Margin="585,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Canvas.ZIndex="2" Visibility="Hidden"/>
+        <Image x:Name="PlayerDStay" Source="/Images/Stay.png" Height="197" Margin="585,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerDBust" Source="/Images/Bust.png" Height="197" Margin="585,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerDPass" Source="/Images/Pass.png" Height="197" Margin="585,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
-        <Image x:Name="PlayerEWin" Source="/Images/Win.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2" />
-        <Image x:Name="PlayerEStay" Source="/Images/Stay.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerEBust" Source="/Images/Bust.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
-        <Image x:Name="PlayerEPass" Source="/Images/Pass.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerEWin" Source="/Images/Win.png" Height="197" Margin="752,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Canvas.ZIndex="2" Visibility="Hidden" />
+        <Image x:Name="PlayerEStay" Source="/Images/Stay.png" Height="197" Margin="752,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerEBust" Source="/Images/Bust.png" Height="197" Margin="752,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerEPass" Source="/Images/Pass.png" Height="197" Margin="752,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="137" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
         <Button x:Name="newRoundButton" Content="New Round?" HorizontalAlignment="Center" Margin="0,361,0,0" Grid.Row="2" VerticalAlignment="Top" Width="190" Click="newRoundButton_Click" Visibility="Hidden"/>
 
@@ -108,7 +108,7 @@
 
 
         <Image x:Name="PlayerACard1"  Height="305" Margin="-650,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
-        <Image x:Name="PlayerACard2"  Height="305" Margin="-640,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
+        <Image x:Name="PlayerACard2"  Height="305" Margin="-640,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187" />
         <Image x:Name="PlayerACard3"  Height="305" Margin="-630,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
 
         <Image x:Name="PlayerBCard1"  Height="305" Margin="-319,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
@@ -123,9 +123,9 @@
         <Image x:Name="PlayerDCard2"  Height="305" Margin="335,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
         <Image x:Name="PlayerDCard3"  Height="305" Margin="345,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
 
-        <Image x:Name="PlayerECard1"  Height="305" Margin="650,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187" />
-        <Image x:Name="PlayerECard2"  Height="305" Margin="660,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187" />
-        <Image x:Name="PlayerECard3"  Height="305" Margin="670,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187" />
+        <Image x:Name="PlayerECard1"  Height="305" Margin="650,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
+        <Image x:Name="PlayerECard2"  Height="305" Margin="660,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
+        <Image x:Name="PlayerECard3"  Height="305" Margin="670,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
 
 
     </Grid>

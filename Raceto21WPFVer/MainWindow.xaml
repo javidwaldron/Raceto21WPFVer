@@ -28,7 +28,7 @@
         <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown" KeyDown="howManyPlayers_KeyDown"  />
 
 
-        <Image x:Name="PlayerAPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
+        <Image x:Name="PlayerAPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerBPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="251,126,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerCPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="386,126,386,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerDPlacementDeck" Source="/Images/CardSpacing.png" Height="197" Margin="574,130,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
@@ -70,10 +70,10 @@
         <Button x:Name="PlayerEPassButton" Content="Fold" HorizontalAlignment="Left" Margin="843,33,0,0" Grid.Row="3" VerticalAlignment="Top" Width="52" Visibility="Hidden"/>
 
 
-        <Image x:Name="PlayerAWin" Source="/Images/Win.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
-        <Image x:Name="PlayerAStay" Source="/Images/Stay.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
-        <Image x:Name="PlayerABust" Source="/Images/Bust.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
-        <Image x:Name="PlayerAPass" Source="/Images/Pass.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerAWin" Source="/Images/Win.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerAStay" Source="/Images/Stay.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerABust" Source="/Images/Bust.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
+        <Image x:Name="PlayerAPass" Source="/Images/Pass.png" Height="197" Margin="86,170,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" Canvas.ZIndex="2"/>
 
 
         <Image x:Name="PlayerBWin" Source="/Images/Win.png" Height="197" Margin="251,170,572,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
@@ -93,7 +93,7 @@
         <Image x:Name="PlayerDBust" Source="/Images/Bust.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerDPass" Source="/Images/Pass.png" Height="197" Margin="574,170,249,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
 
-        <Image x:Name="PlayerEWin" Source="/Images/Win.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
+        <Image x:Name="PlayerEWin" Source="/Images/Win.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden" />
         <Image x:Name="PlayerEStay" Source="/Images/Stay.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerEBust" Source="/Images/Bust.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
         <Image x:Name="PlayerEPass" Source="/Images/Pass.png" Height="197" Margin="730,170,92,0" Grid.Row="3" VerticalAlignment="Top" Width="128" RenderTransformOrigin="0.488,0.504" Visibility="Hidden"/>
@@ -104,8 +104,12 @@
         <Button x:Name="PlacementCcontinue" Content="Opt Out?"  Margin="499,80,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementCcontinue_Click" Visibility="Hidden" />
         <Button x:Name="PlacementDcontinue" Content="Opt Out?"  Margin="650,80,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementDcontinue_Click" Visibility="Hidden" />
         <Button x:Name="PlacementEcontinue" Content="Opt Out?"  Margin="810,80,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementEcontinue_Click" Visibility="Hidden" />
-        <StackPanel x:Name="PlayerACardHolder" Grid.Row="3" Margin="161,129,812,29"/>
-        <Image x:Name="PlayerACardTest" HorizontalAlignment="Left" Height="216" Margin="161,111,0,0" Grid.Row="3" VerticalAlignment="Top" Width="129" />
+        
+        
+        <Image x:Name="PlayerACard1" HorizontalAlignment="Left" Height="305" Margin="112,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
+        <Image x:Name="PlayerACard2" HorizontalAlignment="Left" Height="305" Margin="122,129,0,0" Grid.Row="3" VerticalAlignment="Top" Width="187"/>
+        <Image x:Name="PlayerACard3" HorizontalAlignment="Left" Height="305" Margin="132,130,0,0" Grid.Row="3" VerticalAlignment="Top" Width="186"/>
+
 
 
 

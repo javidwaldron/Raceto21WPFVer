@@ -8,6 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Linq;
+
 
 namespace Raceto21WPFVer
 {
@@ -751,8 +753,7 @@ namespace Raceto21WPFVer
 
                 UpdatePlayerAUI();
 
-                Debug.WriteLine("*************** JAVID LOOK HERE *************" + players[0].cardsInHand[0].ID + "!!!!!!!!!!!!");
-                Debug.WriteLine(@GetCardImageFilePath(""+ players[0].cardsInHand[0].ID));
+                
 
 
                 players[0].score = ScoreHand(players[0]);               
@@ -1819,26 +1820,41 @@ namespace Raceto21WPFVer
 
         }
   
-    public string GetCardImageFilePath(string cardId)
-        {
-
-            return "/Images/" + (cardId) + ".png";
-        }
     
-    
+    // Takes the string of the cards Id and inserts it into a directory of cards of the same name
     public void UpdatePlayerAUI()
         {
             if (players[0].cardsInHand.Count == 1)
             {
                 string cardID = players[0].cardsInHand[0].ID;
 
-                PlayerACardTest.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
+                PlayerACard1.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
 
                 
             }
+            if(players[0].cardsInHand.Count == 2)
+            {
+                string cardID = players[0].cardsInHand[1].ID;
 
+                PlayerACard2.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
 
+            }
+            if (players[0].cardsInHand.Count == 3)
+            {
+                string cardID = players[0].cardsInHand[2].ID;
 
+                PlayerACard3.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
+
+            }
+            if (players[0].cardsInHand.Count > 3)
+            {
+                int lastof = players[0].cardsInHand.Count - 1;
+
+                string cardID = players[0].cardsInHand[lastof].ID;
+
+                PlayerACard3.Source = new BitmapImage(new Uri(@"/Images/" + (cardID) + ".png", UriKind.Relative));
+
+            }
 
         }
     

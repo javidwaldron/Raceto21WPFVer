@@ -229,9 +229,11 @@ namespace Raceto21WPFVer
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Text = players[0].name;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Text = players[1].name;
+                    BlackPlacementD.Visibility= Visibility.Visible;
 
 
 
@@ -256,12 +258,15 @@ namespace Raceto21WPFVer
                     PlayerBPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Visibility = Visibility.Visible;
                     PlayerNamePlacementB.Text = players[0].name;
+                    BlackPlacementB.Visibility = Visibility.Visible;
                     PlayerCPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementC.Visibility = Visibility.Visible;
                     PlayerNamePlacementC.Text = players[1].name;
+                    BlackPlacementC.Visibility=Visibility.Visible;
                     PlayerDPlacementDeck.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Visibility = Visibility.Visible;
                     PlayerNamePlacementD.Text = players[2].name;
+                    BlackPlacementD.Visibility = Visibility.Visible;
 
 
 
@@ -492,12 +497,14 @@ namespace Raceto21WPFVer
 
         private void GameTurn()
         {
-            deck.Shuffle();
+            
             StatusImage();
 
-
+           
             if (turn == 0 && numberOfPlayers == 2)
             {
+                deck.Shuffle();
+
                 PlayerBHitButton.Visibility = Visibility.Visible;
                 PlayerBStayButton.Visibility = Visibility.Visible;
                 PlayerBPassButton.Visibility = Visibility.Visible;
@@ -548,6 +555,7 @@ namespace Raceto21WPFVer
             }
             if (turn == 0 && numberOfPlayers == 3)
             {
+                deck.Shuffle();
 
                 PlayerBHitButton.Visibility = Visibility.Visible;
                 PlayerBStayButton.Visibility = Visibility.Visible;
@@ -625,6 +633,8 @@ namespace Raceto21WPFVer
             }
             if (turn == 0 && numberOfPlayers == 4)
             {
+                deck.Shuffle();
+
                 PlayerAHitButton.Visibility = Visibility.Visible;
                 PlayerAStayButton.Visibility = Visibility.Visible;
                 PlayerAPassButton.Visibility = Visibility.Visible;
@@ -714,7 +724,7 @@ namespace Raceto21WPFVer
                 }
 
             }
-
+            
 
 
 
@@ -846,8 +856,10 @@ namespace Raceto21WPFVer
                 players[0].score = 0;
                 playerScore.Add(players[0].score);
                 turn++;
+                
                 GameTurn();
                 placementApass = true;
+                PlayerAPass.Visibility = Visibility.Visible;
 
             }
 
@@ -1098,6 +1110,8 @@ namespace Raceto21WPFVer
 
             }
 
+            StatusImage();
+
         }
 
 
@@ -1186,7 +1200,9 @@ namespace Raceto21WPFVer
                 playerScore.Add(players[1].score);
                 turn++;
                 placementCpass = true;
+                StatusImage();
                 GameTurn();
+
 
 
             }
@@ -1420,6 +1436,9 @@ namespace Raceto21WPFVer
 
             }
 
+            StatusImage();
+
+
         }
 
         // PLACEMENT E GAMEPLAY BOXES HERE+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -1509,6 +1528,7 @@ namespace Raceto21WPFVer
                 turn++;
                 placementEpass = true;
                 GameTurn();
+                
 
             }
 
@@ -1610,109 +1630,122 @@ namespace Raceto21WPFVer
 
         private void newRoundButton_Click(object sender, RoutedEventArgs e)
         {
-            Deck deck = new Deck();
+
+            
+
+                Deck deck = new Deck();
 
 
-            turn = 0;
+                turn = 0;
 
-            placementAwin = false;
-            placementBwin = false;
-            placementCwin = false;
-            placementDwin = false;
-            placementEwin = false;
+                placementAwin = false;
+                placementBwin = false;
+                placementCwin = false;
+                placementDwin = false;
+                placementEwin = false;
 
-            placementAstay = false;
-            placementBstay = false;
-            placementCstay = false;
-            placementDstay = false;
-            placementEstay = false;
+                placementAstay = false;
+                placementBstay = false;
+                placementCstay = false;
+                placementDstay = false;
+                placementEstay = false;
 
-            placementAbust = false;
-            placementBbust = false;
-            placementCbust = false;
-            placementDbust = false;
-            placementEbust = false;
+                placementAbust = false;
+                placementBbust = false;
+                placementCbust = false;
+                placementDbust = false;
+                placementEbust = false;
 
-            placementApass = false;
-            placementBpass = false;
-            placementCpass = false;
-            placementDpass = false;
-            placementEpass = false;
+                placementApass = false;
+                placementBpass = false;
+                placementCpass = false;
+                placementDpass = false;
+                placementEpass = false;
 
-            PlayerAWin.Visibility = Visibility.Hidden;
-            PlayerBWin.Visibility = Visibility.Hidden;
-            PlayerCWin.Visibility = Visibility.Hidden;
-            PlayerDWin.Visibility = Visibility.Hidden;
-            PlayerEWin.Visibility = Visibility.Hidden;
+                PlayerAWin.Visibility = Visibility.Hidden;
+                PlayerBWin.Visibility = Visibility.Hidden;
+                PlayerCWin.Visibility = Visibility.Hidden;
+                PlayerDWin.Visibility = Visibility.Hidden;
+                PlayerEWin.Visibility = Visibility.Hidden;
 
-            PlayerABust.Visibility = Visibility.Hidden;
-            PlayerBBust.Visibility = Visibility.Hidden;
-            PlayerCBust.Visibility = Visibility.Hidden;
-            PlayerDBust.Visibility = Visibility.Hidden;
-            PlayerEBust.Visibility = Visibility.Hidden;
+                PlayerABust.Visibility = Visibility.Hidden;
+                PlayerBBust.Visibility = Visibility.Hidden;
+                PlayerCBust.Visibility = Visibility.Hidden;
+                PlayerDBust.Visibility = Visibility.Hidden;
+                PlayerEBust.Visibility = Visibility.Hidden;
 
-            PlayerAPass.Visibility = Visibility.Hidden;
-            PlayerBPass.Visibility = Visibility.Hidden;
-            PlayerCPass.Visibility = Visibility.Hidden;
-            PlayerDPass.Visibility = Visibility.Hidden;
-            PlayerEPass.Visibility = Visibility.Hidden;
+                PlayerAPass.Visibility = Visibility.Hidden;
+                PlayerBPass.Visibility = Visibility.Hidden;
+                PlayerCPass.Visibility = Visibility.Hidden;
+                PlayerDPass.Visibility = Visibility.Hidden;
+                PlayerEPass.Visibility = Visibility.Hidden;
 
-            PlayerAStay.Visibility = Visibility.Hidden;
-            PlayerBStay.Visibility = Visibility.Hidden;
-            PlayerCStay.Visibility = Visibility.Hidden;
-            PlayerDStay.Visibility = Visibility.Hidden;
-            PlayerEStay.Visibility = Visibility.Hidden;
+                PlayerAStay.Visibility = Visibility.Hidden;
+                PlayerBStay.Visibility = Visibility.Hidden;
+                PlayerCStay.Visibility = Visibility.Hidden;
+                PlayerDStay.Visibility = Visibility.Hidden;
+                PlayerEStay.Visibility = Visibility.Hidden;
 
-            PlacementAcontinue.Visibility = Visibility.Hidden;
-            PlacementBcontinue.Visibility = Visibility.Hidden;
-            PlacementCcontinue.Visibility = Visibility.Hidden;
-            PlacementDcontinue.Visibility = Visibility.Hidden;
-            PlacementEcontinue.Visibility = Visibility.Hidden;
+                PlacementAcontinue.Visibility = Visibility.Hidden;
+                PlacementBcontinue.Visibility = Visibility.Hidden;
+                PlacementCcontinue.Visibility = Visibility.Hidden;
+                PlacementDcontinue.Visibility = Visibility.Hidden;
+                PlacementEcontinue.Visibility = Visibility.Hidden;
 
-            PlayerACard1.Source = null;
-            PlayerACard2.Source = null;
-            PlayerACard3.Source = null;
+                PlayerACard1.Source = null;
+                PlayerACard2.Source = null;
+                PlayerACard3.Source = null;
 
-            PlayerBCard1.Source = null;
-            PlayerBCard2.Source = null;
-            PlayerBCard3.Source = null;
+                PlayerBCard1.Source = null;
+                PlayerBCard2.Source = null;
+                PlayerBCard3.Source = null;
 
-            PlayerCCard1.Source = null;
-            PlayerCCard2.Source = null;
-            PlayerCCard3.Source = null;
+                PlayerCCard1.Source = null;
+                PlayerCCard2.Source = null;
+                PlayerCCard3.Source = null;
 
-            PlayerDCard1.Source = null;
-            PlayerDCard2.Source = null;
-            PlayerDCard3.Source = null;
+                PlayerDCard1.Source = null;
+                PlayerDCard2.Source = null;
+                PlayerDCard3.Source = null;
 
-            PlayerECard1.Source = null;
-            PlayerECard2.Source = null;
-            PlayerECard3.Source = null;
-
-
+                PlayerECard1.Source = null;
+                PlayerECard2.Source = null;
+                PlayerECard3.Source = null;
 
 
-            foreach (Player player in players)
-            {
-                player.score = 0;
-                player.cardsInHand.Clear();
 
-                player.hasWon = false;
-                player.isBust = false;
-                player.isStaying = false;
 
-            }
+                foreach (Player player in players)
+                {
+                    player.score = 0;
+                    player.cardsInHand.Clear();
 
-            playerScore.Clear();
+                    player.hasWon = false;
+                    player.isBust = false;
+                    player.isStaying = false;
 
-            PlayerNamesNewRound();
-            AssignPlayers();
+                }
 
-            AskBox.Text = "" + players[0].name + " is now Player 1, are you ready for your first card?";
-            GameTurn();
-            newRoundButton.Visibility = Visibility.Hidden;
+                playerScore.Clear();
 
+                PlayerNamesNewRound();
+                AssignPlayers();
+
+                AskBox.Text = "" + players[0].name + " is now Player 1, are you ready for your first card?";
+                GameTurn();
+                newRoundButton.Visibility = Visibility.Hidden;
+            
+        
+        
         }
+            
+           
+        
+        
+        
+        
+        
+        
 
         // PLAYER REMOVAL SYSTEM FOR AT THE END OF ROUND, BASED ON AMOUNT OF PEOPLE PLAYING AND PLAYER PLACEMENT TO REMOVE AND SHIFT PLAYER NUMBERS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -1744,7 +1777,9 @@ namespace Raceto21WPFVer
             }
             else if (numberOfPlayers == 2)
             {
-                //insert void reaction here
+                ClearEverything();
+                GameOverBlock.Visibility = Visibility.Visible;
+                GameOverTextImage.Visibility = Visibility.Visible;
             }
 
 
@@ -1778,7 +1813,10 @@ namespace Raceto21WPFVer
             }
             else if (numberOfPlayers == 2)
             {
-                // insert void player reaction
+                players.Clear();
+                ClearEverything();
+                GameOverBlock.Visibility = Visibility.Visible;
+                GameOverTextImage.Visibility = Visibility.Visible;
 
             }
 
@@ -1805,7 +1843,10 @@ namespace Raceto21WPFVer
             }
             else if (numberOfPlayers == 2)
             {
-                //insert void reaction here
+                players.Clear();
+                ClearEverything();
+                GameOverBlock.Visibility = Visibility.Visible;
+                GameOverTextImage.Visibility = Visibility.Visible;
             }
 
             PlacementCcontinue.Visibility = Visibility.Hidden;
@@ -1841,7 +1882,12 @@ namespace Raceto21WPFVer
             }
             else if (numberOfPlayers == 2)
             {
-                //insert void reaction here
+                
+                    ClearEverything();
+                    players.Clear();
+                    GameOverBlock.Visibility = Visibility.Visible;
+                    GameOverTextImage.Visibility = Visibility.Visible;
+                
             }
 
             PlacementDcontinue.Visibility = Visibility.Hidden;
@@ -1877,7 +1923,11 @@ namespace Raceto21WPFVer
             }
             else if (numberOfPlayers == 2)
             {
-                //insert void reaction here
+                ClearEverything();
+                players.Clear();
+                    GameOverBlock.Visibility = Visibility.Visible;
+                    GameOverTextImage.Visibility = Visibility.Visible;
+                
             }
 
             PlacementEcontinue.Visibility = Visibility.Hidden;
@@ -2171,10 +2221,112 @@ namespace Raceto21WPFVer
             }
 
 
+        }
 
 
+        private void ClearEverything()
+        {
+            Player_1_Score_and_Holder.Text = "";
+            Player_2_Score_and_Holder.Text = "";
+            Player_3_Score_and_Holder.Text = "";
+            Player_4_Score_and_Holder.Text = "";
+
+            placementAwin = false;
+            placementBwin = false;
+            placementCwin = false;
+            placementDwin = false;
+            placementEwin = false;
+
+            placementAstay = false;
+            placementBstay = false;
+            placementCstay = false;
+            placementDstay = false;
+            placementEstay = false;
+
+            placementAbust = false;
+            placementBbust = false;
+            placementCbust = false;
+            placementDbust = false;
+            placementEbust = false;
+
+            placementApass = false;
+            placementBpass = false;
+            placementCpass = false;
+            placementDpass = false;
+            placementEpass = false;
+
+            PlayerAWin.Visibility = Visibility.Hidden;
+            PlayerBWin.Visibility = Visibility.Hidden;
+            PlayerCWin.Visibility = Visibility.Hidden;
+            PlayerDWin.Visibility = Visibility.Hidden;
+            PlayerEWin.Visibility = Visibility.Hidden;
+
+            PlayerABust.Visibility = Visibility.Hidden;
+            PlayerBBust.Visibility = Visibility.Hidden;
+            PlayerCBust.Visibility = Visibility.Hidden;
+            PlayerDBust.Visibility = Visibility.Hidden;
+            PlayerEBust.Visibility = Visibility.Hidden;
+
+            PlayerAPass.Visibility = Visibility.Hidden;
+            PlayerBPass.Visibility = Visibility.Hidden;
+            PlayerCPass.Visibility = Visibility.Hidden;
+            PlayerDPass.Visibility = Visibility.Hidden;
+            PlayerEPass.Visibility = Visibility.Hidden;
+
+            PlayerAStay.Visibility = Visibility.Hidden;
+            PlayerBStay.Visibility = Visibility.Hidden;
+            PlayerCStay.Visibility = Visibility.Hidden;
+            PlayerDStay.Visibility = Visibility.Hidden;
+            PlayerEStay.Visibility = Visibility.Hidden;
+
+            PlacementAcontinue.Visibility = Visibility.Hidden;
+            PlacementBcontinue.Visibility = Visibility.Hidden;
+            PlacementCcontinue.Visibility = Visibility.Hidden;
+            PlacementDcontinue.Visibility = Visibility.Hidden;
+            PlacementEcontinue.Visibility = Visibility.Hidden;
+
+            PlayerACard1.Source = null;
+            PlayerACard2.Source = null;
+            PlayerACard3.Source = null;
+
+            PlayerBCard1.Source = null;
+            PlayerBCard2.Source = null;
+            PlayerBCard3.Source = null;
+
+            PlayerCCard1.Source = null;
+            PlayerCCard2.Source = null;
+            PlayerCCard3.Source = null;
+
+            PlayerDCard1.Source = null;
+            PlayerDCard2.Source = null;
+            PlayerDCard3.Source = null;
+
+            PlayerECard1.Source = null;
+            PlayerECard2.Source = null;
+            PlayerECard3.Source = null;
+
+            PlayerAPlacementDeck.Visibility = Visibility.Hidden;
+            PlayerNamePlacementA.Visibility = Visibility.Hidden;
+            PlayerNameAAskBox.Visibility = Visibility.Hidden;
+            BlackPlacementA.Visibility = Visibility.Hidden;
+            PlayerBPlacementDeck.Visibility = Visibility.Hidden;
+            PlayerNamePlacementB.Visibility = Visibility.Hidden;
+            PlayerNameBAskBox.Visibility = Visibility.Hidden;
+            BlackPlacementB.Visibility = Visibility.Hidden;
+            PlayerDPlacementDeck.Visibility = Visibility.Hidden;
+            PlayerNamePlacementD.Visibility = Visibility.Hidden;
+            PlayerNameDAskBox.Visibility = Visibility.Hidden;
+            BlackPlacementD.Visibility = Visibility.Hidden;
+            PlayerEPlacementDeck.Visibility = Visibility.Hidden;
+            PlayerNamePlacementE.Visibility = Visibility.Hidden;
+            PlayerNameEAskBox.Visibility = Visibility.Hidden;
+            BlackPlacementE.Visibility = Visibility.Hidden;
+
+            BlackPlacementC.Visibility = Visibility.Hidden;
 
         }
+
+
 
        
     }     

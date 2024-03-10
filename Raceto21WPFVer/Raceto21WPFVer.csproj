@@ -192,5 +192,11 @@
   <ItemGroup>
     <Resource Include="Images\kingbackwhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Titleimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gameovertextimage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

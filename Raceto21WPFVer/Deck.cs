@@ -102,15 +102,8 @@ namespace Raceto21WPFVer
             return card;
         }
 
-        //Just a test
-        public void ShowAllCards()
-        {
-            foreach (Card card in cardsForGame)
-            {
-                Debug.Write(""+card.ID);
-               
-            }
-        }
+       
+       
 
 
     }

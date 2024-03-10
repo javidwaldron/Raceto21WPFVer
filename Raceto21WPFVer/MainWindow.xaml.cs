@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,8 +18,7 @@ namespace Raceto21WPFVer
 
         Game game = new Game();
         Deck deck = new Deck();
-        CardImageBind cardBound = new CardImageBind();  
-        ImageItem cardImages = new ImageItem();
+        
 
         public int numberOfPlayers;
         public int nameenteredcount;
@@ -70,11 +70,14 @@ namespace Raceto21WPFVer
             InitializeComponent();
             deck.ShowAllCards();
 
-            Image cardImage = (Image)Properties.Resources.ResourceManager.GetObject("7C");
+            
 
-            PlayerACardTest = cardImage;
+            PlayerACardTest.Source = new BitmapImage(new Uri(@"/Images/7C.png", UriKind.Relative));
 
         }
+
+        
+
 
 
 

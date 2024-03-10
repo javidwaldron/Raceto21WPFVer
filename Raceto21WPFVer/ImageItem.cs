@@ -12,4 +12,7 @@ namespace Raceto21WPFVer
         public string ImagePath { get; set; }
         public string ID;
     }
+       
+   
+    
 }

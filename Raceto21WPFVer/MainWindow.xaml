@@ -104,8 +104,10 @@
         <Button x:Name="PlacementCcontinue" Content="Opt Out?"  Margin="499,80,499,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementCcontinue_Click" Visibility="Hidden" />
         <Button x:Name="PlacementDcontinue" Content="Opt Out?"  Margin="650,80,335,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementDcontinue_Click" Visibility="Hidden" />
         <Button x:Name="PlacementEcontinue" Content="Opt Out?"  Margin="810,80,178,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Click="PlacementEcontinue_Click" Visibility="Hidden" />
+        <StackPanel x:Name="PlayerACardHolder" Grid.Row="3" Margin="161,129,812,29"/>
+        <Image x:Name="PlayerACardTest" HorizontalAlignment="Left" Height="216" Margin="161,111,0,0" Grid.Row="3" VerticalAlignment="Top" Width="129" Source="/Images/7D.png"/>
 
-        <Image x:Name="PlacementACardHolder" Source="{Binding ImagePath}" Height="197" Margin="86,126,737,0" Grid.Row="3" VerticalAlignment="Top" Width="127" RenderTransformOrigin="0.488,0.504"/>
+
 
 
 

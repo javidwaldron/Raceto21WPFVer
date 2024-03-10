@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace Raceto21WPFVer
 {
@@ -14,6 +17,8 @@ namespace Raceto21WPFVer
 
         Game game = new Game();
         Deck deck = new Deck();
+        CardImageBind cardBound = new CardImageBind();  
+        ImageItem cardImages = new ImageItem();
 
         public int numberOfPlayers;
         public int nameenteredcount;
@@ -53,13 +58,25 @@ namespace Raceto21WPFVer
 
         List<Player> players = new List<Player>();
         List<int> playerScore = new List<int>();
+        
+        
+        
+
         public MainWindow()
         {
+            
+         
 
             InitializeComponent();
             deck.ShowAllCards();
 
+            Image cardImage = (Image)Properties.Resources.ResourceManager.GetObject("7C");
+
+            PlayerACardTest = cardImage;
+
         }
+
+
 
         //Exit Menu Button
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -712,19 +729,27 @@ namespace Raceto21WPFVer
         }
 
 
-
-
+       
 
         // PLACEMENT A GAMEPLAY BOXES HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         private void PlayerAHitButton_Click(object sender, RoutedEventArgs e)
         {
 
+          
+
+
             if (numberOfPlayers == 4)
             {
+                
                 Card card = deck.DealTopCard();
+                 
+                
 
                 players[0].cardsInHand.Add(card);
+
+                
+
                 players[0].score = ScoreHand(players[0]);               
                 Player_1_Score_and_Holder.Text = "Player 1 " + players[0].name + " : score of " + players[0].score + "/21";
                 AskBox.Text = "Would you like another card, " + players[0].name + " ?";
@@ -1789,9 +1814,6 @@ namespace Raceto21WPFVer
 
         }
   
-    
-    
-    
     
     
     

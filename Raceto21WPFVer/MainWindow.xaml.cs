@@ -1445,8 +1445,16 @@ namespace Raceto21WPFVer
 
         private void PlayerDPassButton_Click(object sender, RoutedEventArgs e)
         {
-
-            if (numberOfPlayers == 3)
+            if (numberOfPlayers == 2)
+            {
+                Player_2_Score_and_Holder.Text = "Player 2 " + players[1].name + " is sitting out this round!";
+                players[1].score = 0;
+                playerScore.Add(players[1].score);
+                turn++;
+                placementDpass = true;
+                GameTurn();
+            }
+                if (numberOfPlayers == 3)
             {
                 Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " is sitting out this round!";
                 players[2].score = 0;

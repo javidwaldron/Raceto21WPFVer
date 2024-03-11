@@ -198,5 +198,13 @@
   <ItemGroup>
     <Resource Include="Images\Gameovertextimage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Kingvictorygif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\smooth.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

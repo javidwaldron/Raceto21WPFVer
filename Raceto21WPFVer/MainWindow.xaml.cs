@@ -9,7 +9,9 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Linq;
-
+using Microsoft.Win32;
+using System.Media;
+using System.Runtime.CompilerServices;
 
 namespace Raceto21WPFVer
 {
@@ -19,6 +21,8 @@ namespace Raceto21WPFVer
     {
 
         
+        
+
         Deck deck = new Deck();
 
 
@@ -68,16 +72,30 @@ namespace Raceto21WPFVer
         {
 
             InitializeComponent();
-           
+
+            PlayMusic("columns.wav");
+
         }
 
+        //Added for fun, plays music from segas columns
+        public void PlayMusic(string filepath)
+        {
+            SoundPlayer musicPlayer = new SoundPlayer();
+            musicPlayer.SoundLocation = filepath;
+            musicPlayer.Play();
 
 
 
+        }
+
+        
+
+       
 
 
-        //Exit Menu Button
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+
+    //Exit Menu Button
+    private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             System.Environment.Exit(0);
         }
@@ -489,6 +507,8 @@ namespace Raceto21WPFVer
             ReadyButton.Visibility = Visibility.Collapsed;
             AskBox.Text = "Ok " + players[0].name + " are you ready for your first card?";
             GameTurn();
+
+            
 
         }
 
@@ -2326,8 +2346,6 @@ namespace Raceto21WPFVer
 
         }
 
-
-
-       
+        
     }     
 }

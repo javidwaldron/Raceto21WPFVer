@@ -2357,6 +2357,16 @@ namespace Raceto21WPFVer
 
         }
 
-        
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            howtoPlayImage.Visibility = Visibility.Visible;
+            howtoplaybutton.Visibility = Visibility.Visible;
+        }
+
+        private void howtoplaybutton_Click(object sender, RoutedEventArgs e)
+        {
+            howtoPlayImage.Visibility = Visibility.Hidden;
+            howtoplaybutton.Visibility= Visibility.Hidden;
+        }
     }     
 }

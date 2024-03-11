@@ -498,6 +498,7 @@ namespace Raceto21WPFVer
                     Player_3_Score_and_Holder.Text = "Player 3 " + players[2].name + " : score of " + players[2].score + "/21";
                     Player_4_Score_and_Holder.Text = "Player 4 " + players[3].name + " : score of " + players[3].score + "/21";
 
+
                     break;
 
             }

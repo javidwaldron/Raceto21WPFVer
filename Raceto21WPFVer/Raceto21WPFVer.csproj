@@ -204,5 +204,14 @@
   <ItemGroup>
     <None Include="Resources\columnsred.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Titleimagealt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Titleimage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\r21.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

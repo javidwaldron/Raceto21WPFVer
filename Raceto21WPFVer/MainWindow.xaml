@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Raceto21WPFVer"
         mc:Ignorable="d"
-        Title="Raceto21" Height="900" Width="1500">
+        Title="Raceto21" Height="900" Width="1800">
     <Grid Background="#FF5659A3">
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
@@ -23,7 +23,8 @@
 
         </Menu>
         <Image x:Name="Bluelogo" Source="/Images/bluecardstrans.png" Grid.Row="1" VerticalAlignment="Top" Height="300" Margin="0,8,0,0"  HorizontalAlignment="Center" Grid.RowSpan="2" StretchDirection="UpOnly"/>
-        <Image x:Name="Titleimage"  Height="198" Margin="480,-28,540,0" VerticalAlignment="Top" Source="/Images/Titleimage.png" Grid.RowSpan="3"/>
+        <Image x:Name="Titleimage"  Height="161" Margin="497,-10,525,0" VerticalAlignment="Top" Grid.RowSpan="3" Source="/Images/r21.png" />
+
 
         <TextBlock x:Name="AskBox" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="How Many Players Today?" Width="430" FontWeight="Bold" TextAlignment="Center" FontSize="16" Margin="0,250,0,0"/>
         <TextBox x:Name="howManyPlayers" HorizontalAlignment="Center" Margin="0,283,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Enter a number between 2 - 4" VerticalAlignment="Top" Width="190" PreviewMouseDown="howManyPlayers_PreviewMouseDown" KeyDown="howManyPlayers_KeyDown"  />
@@ -47,10 +48,10 @@
         <TextBox x:Name="PlayerNameDAskBox"  Margin="320,67,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Name?" VerticalAlignment="Top" Width="120" KeyDown="PlayerNameDAskBox_KeyDown" PreviewMouseDown="PlayerNameDAskBox_PreviewMouseDown" Visibility="Hidden"/>
         <TextBox x:Name="PlayerNameEAskBox"  Margin="640,67,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Name?" VerticalAlignment="Top" Width="120" KeyDown="PlayerNameEAskBox_KeyDown" PreviewMouseDown="PlayerNameEAskBox_PreviewMouseDown" Visibility="Hidden"/>
 
-        <TextBlock x:Name="Player_1_Score_and_Holder" HorizontalAlignment="Left" Margin="203,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2" Foreground="White"/>
-        <TextBlock x:Name="Player_2_Score_and_Holder" HorizontalAlignment="Left" Margin="203,36,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White" />
-        <TextBlock x:Name="Player_3_Score_and_Holder" HorizontalAlignment="Left" Margin="203,6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White"  />
-        <TextBlock x:Name="Player_4_Score_and_Holder" HorizontalAlignment="Left" Margin="203,43,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White"  />
+        <TextBlock x:Name="Player_1_Score_and_Holder" HorizontalAlignment="Left" Margin="318,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Grid.RowSpan="2" Foreground="White"/>
+        <TextBlock x:Name="Player_2_Score_and_Holder" HorizontalAlignment="Left" Margin="318,36,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
+        <TextBlock x:Name="Player_3_Score_and_Holder" HorizontalAlignment="Left" Margin="318,6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White" />
+        <TextBlock x:Name="Player_4_Score_and_Holder" HorizontalAlignment="Left" Margin="318,43,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
 
         <Button x:Name="ReadyButton" Content="Ready?" HorizontalAlignment="Center" Margin="0,336,0,0" Grid.Row="2" VerticalAlignment="Top" Width="214" Click="ReadyButton_Click" Visibility="Hidden"/>
 
@@ -140,7 +141,9 @@
         <Rectangle x:Name="GameOverBlock"  Height="876" Margin="301,23,307,0" Stroke="Black" VerticalAlignment="Top" Fill="Black" Canvas.ZIndex="2" Grid.RowSpan="4" Visibility="Hidden" />
         <Image x:Name="GameOverTextImage"  Height="1010" Margin="280,47,220,0" Grid.Row="1" VerticalAlignment="Top" Width="999" Canvas.ZIndex="3" Source="/Images/Gameovertextimage.png" Grid.RowSpan="3" Visibility="Hidden"/>
 
-        
+
+
+
 
 
     </Grid>

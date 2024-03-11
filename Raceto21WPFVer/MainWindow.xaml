@@ -19,7 +19,7 @@
                 <MenuItem Header="Exit" FontSize="16" Click="MenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="How To Play" FontSize="16" Click="MenuItem_Click_1"/>
-            <MenuItem Header="About" FontSize="16"/>
+            <MenuItem Header="About" FontSize="16" Click="MenuItem_Click_2"/>
 
         </Menu>
         <Image x:Name="Bluelogo" Source="/Images/bluecardstrans.png" Grid.Row="1" VerticalAlignment="Top" Height="300" Margin="0,8,0,0"  HorizontalAlignment="Center" Grid.RowSpan="2" StretchDirection="UpOnly"/>
@@ -142,10 +142,11 @@
         <Image x:Name="GameOverTextImage"  Height="744" Margin="525,35,495,0" Grid.Row="1" VerticalAlignment="Top" Canvas.ZIndex="3" Source="/Images/endmsg.png" Grid.RowSpan="3" Visibility="Hidden"/>
         <Image x:Name="Logoname"  Height="95" Margin="0,17,174,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="115" Source="/Images/Logotranswhite.png" Grid.Row="1" HorizontalAlignment="Right" />
 
-        <Image x:Name="howtoPlayImage" Height="647" Margin="261,36,286,0" VerticalAlignment="Top" Width="1203" Grid.RowSpan="3" Grid.Row="1" Source="/Images/HowtoPlay.png"/>
-        <Button x:Name="howtoplaybutton" Content="OK?" Margin="950,2,711,0" Grid.Row="2" VerticalAlignment="Top" Height="33" Click="howtoplaybutton_Click"/>
+        <Image x:Name="howtoPlayImage" Height="647" Margin="261,36,286,0" VerticalAlignment="Top" Width="1203" Grid.RowSpan="3" Grid.Row="1" Source="/Images/HowtoPlay.png" Visibility="Hidden" Canvas.ZIndex="4"/>
+        <Button x:Name="howtoplaybutton" Content="OK!" Margin="950,2,711,0" Grid.Row="2" VerticalAlignment="Top" Height="33" Click="howtoplaybutton_Click" Visibility="Hidden" Canvas.ZIndex="4"/>
 
-
+        <Image x:Name="AboutImg" Height="647" Margin="261,36,286,0" VerticalAlignment="Top" Width="1203" Grid.RowSpan="3" Grid.Row="1" Source="/Images/AboutImage.png" Canvas.ZIndex="4" Visibility="Hidden" />
+        <Button x:Name="Aboutbutton" Content="OK!" Margin="965,239,696,0" Grid.Row="2" VerticalAlignment="Top" Height="33" Click="Aboutbutton_Click" Visibility="Hidden" Canvas.ZIndex="4" />
 
 
 

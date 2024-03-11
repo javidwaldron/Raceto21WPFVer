@@ -2357,16 +2357,47 @@ namespace Raceto21WPFVer
 
         }
 
+        //Extra menu Top of window code
+
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             howtoPlayImage.Visibility = Visibility.Visible;
             howtoplaybutton.Visibility = Visibility.Visible;
+            GameOverTextImage.Visibility = Visibility.Hidden;
+
         }
 
         private void howtoplaybutton_Click(object sender, RoutedEventArgs e)
         {
             howtoPlayImage.Visibility = Visibility.Hidden;
             howtoplaybutton.Visibility= Visibility.Hidden;
+            
+            if (numberOfPlayers == 2 && GameOverBlock.Visibility == Visibility.Visible)
+            {
+                GameOverTextImage.Visibility = Visibility.Visible;
+            }
+
+        }
+
+        private void Aboutbutton_Click(object sender, RoutedEventArgs e)
+        {
+            AboutImg.Visibility = Visibility.Hidden;
+            Aboutbutton.Visibility = Visibility.Hidden;
+            
+
+            if(numberOfPlayers == 2 && GameOverBlock.Visibility == Visibility.Visible)
+            {
+                GameOverTextImage.Visibility = Visibility.Visible;
+            }
+         
+        }
+
+        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        {
+            AboutImg.Visibility = Visibility.Visible;
+            Aboutbutton.Visibility = Visibility.Visible;
+            GameOverTextImage.Visibility = Visibility.Hidden;
+
         }
     }     
 }

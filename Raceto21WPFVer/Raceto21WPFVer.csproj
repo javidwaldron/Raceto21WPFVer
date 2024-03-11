@@ -204,5 +204,8 @@
   <ItemGroup>
     <None Include="Resources\columns.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\columnsred.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

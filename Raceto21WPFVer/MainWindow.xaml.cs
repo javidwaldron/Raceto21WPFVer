@@ -83,7 +83,7 @@ namespace Raceto21WPFVer
         //Added for fun, plays music from segas columns
         public void PlayMusic()
         {
-            SoundPlayer musicPlayer = new SoundPlayer(Raceto21WPFVer.Properties.Resources.columns);
+            SoundPlayer musicPlayer = new SoundPlayer(Raceto21WPFVer.Properties.Resources.columnsred);
             
             musicPlayer.Play();
 

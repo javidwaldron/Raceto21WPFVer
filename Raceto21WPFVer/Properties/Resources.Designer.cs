@@ -63,9 +63,9 @@ namespace Raceto21WPFVer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream columns {
+        internal static System.IO.UnmanagedMemoryStream columnsred {
             get {
-                return ResourceManager.GetStream("columns", resourceCulture);
+                return ResourceManager.GetStream("columnsred", resourceCulture);
             }
         }
     }

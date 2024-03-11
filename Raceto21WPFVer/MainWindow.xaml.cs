@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows;
+
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -12,6 +13,7 @@ using System.Linq;
 using Microsoft.Win32;
 using System.Media;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace Raceto21WPFVer
 {
@@ -71,19 +73,27 @@ namespace Raceto21WPFVer
         public MainWindow()
         {
 
+            PlayMusic();
             InitializeComponent();
 
-            PlayMusic("columns.wav");
+            
 
         }
 
         //Added for fun, plays music from segas columns
-        public void PlayMusic(string filepath)
+        public void PlayMusic()
         {
-            SoundPlayer musicPlayer = new SoundPlayer();
-            musicPlayer.SoundLocation = filepath;
+            SoundPlayer musicPlayer = new SoundPlayer(Raceto21WPFVer.Properties.Resources.columns);
+            
             musicPlayer.Play();
 
+            bool soundFinished = true;
+
+            if (soundFinished)
+            {
+                soundFinished = false;
+                Task.Factory.StartNew(() => { musicPlayer.PlaySync(); soundFinished = true; });
+            }
 
 
         }

@@ -202,9 +202,7 @@
     <Resource Include="Images\Kingvictorygif.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\smooth.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\columns.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

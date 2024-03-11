@@ -491,6 +491,15 @@ namespace Raceto21WPFVer {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream columns {
+            get {
+                return ResourceManager.GetStream("columns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap JC {
@@ -617,16 +626,6 @@ namespace Raceto21WPFVer {
             get {
                 object obj = ResourceManager.GetObject("QS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] smooth {
-            get {
-                object obj = ResourceManager.GetObject("smooth", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
